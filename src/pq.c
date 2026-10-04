@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/04 16:08:22 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/04 21:04:56 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,18 @@ t_bool	pq_destroy(t_pq *pq)
 
 t_bool	pq_push(t_pq *pq, void *data)
 {
-	size_t	last_index;
+	size_t	index;
 
 	if (pq->size == pq->capacity && !pqu_grow(pq))
 		return (false);
-	last_index = pq->size * pq->data_size;
-	memcpy(pq->container + last_index, data, pq->data_size);
-	pqu_shift_up(pq, pq->size);
+	index = pq->size;
+	memcpy(
+		pq->container + index * pq->data_size,
+		data,
+		pq->data_size
+	);
 	pq->size++;
+	pqu_shift_up(pq, index);
 	return (true);
 }
 

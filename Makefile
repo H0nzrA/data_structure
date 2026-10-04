@@ -8,7 +8,7 @@ INC_DIR 	:= inc
 OBJ_DIR		:= obj
 BUILD_DIR	:= build
 
-FILES	:= pq pq_intern_operation pq_relation
+FILES	:= pq pq_memory pq_relation pq_operation
 
 
 SRCS	:= $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(FILES)))

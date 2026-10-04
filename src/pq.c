@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/04 15:24:17 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/04 15:44:15 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_bool	pq_init(t_pq *pq, size_t data_size, t_compare compare)
 	return (true);
 }
 
-t_bool				pq_destroy(t_pq *pq)
+t_bool	pq_destroy(t_pq *pq)
 {
 	if (pq->container)
 		free(pq->container);
@@ -36,7 +36,7 @@ t_bool				pq_destroy(t_pq *pq)
 	return (true);
 }
 
-t_bool				pq_push(t_pq *pq, void *data)
+t_bool	pq_push(t_pq *pq, void *data)
 {
 	size_t	last_index;
 
@@ -48,5 +48,5 @@ t_bool				pq_push(t_pq *pq, void *data)
 	return (true);
 }
 
-t_bool				pq_pop(t_pq *pq, void *store);
-t_bool				pq_peek(t_pq *pq, void *store);
+t_bool	pq_pop(t_pq *pq, void *store);
+t_bool	pq_peek(t_pq *pq, void *store);

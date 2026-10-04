@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:47:44 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/04 21:05:24 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/04 22:32:08 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,20 @@ void	pqu_shift_up(t_pq *pq, size_t index)
 	}
 }
 
-void	pqu_shift_down(t_pq *pq, size_t index);
+void	pqu_shift_down(t_pq *pq, size_t index)
+{
+	size_t	child;
+	size_t	right_child;
+
+	while (pqu_left_node(index) < pq->size)
+	{
+		child = pqu_left_node(index);
+		right_child = pqu_right_node(index);
+		if (right_child < pq->size && compare_value(pq, child, right_child) < 0)
+			child = right_child;
+		if (compare_value(pq, index, child) >= 0)
+			break ;
+		pqu_swap(pq, index, child);
+		index = child;
+	}
+}

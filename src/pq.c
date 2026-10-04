@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/04 21:04:56 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/04 22:32:47 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,36 @@ t_bool	pq_push(t_pq *pq, void *data)
 	return (true);
 }
 
-t_bool	pq_pop(t_pq *pq, void *store);
-t_bool	pq_peek(t_pq *pq, void *store);
+t_bool	pq_pop(t_pq *pq, void *store)
+{
+	unsigned char	*root;
+	unsigned char	*last;
+
+	root = pq->container;
+	last = pq->container + (pq->size - 1) * pq->data_size;
+	if (pq->size == 0)
+		return (false);
+	if (store)
+		memcpy(store, root, pq->data_size);
+	if (pq->size > 1)
+		memcpy(root, last, pq->data_size);
+	pq->size--;
+	pqu_shift_down(pq, 0);
+	if (pq->size > 1
+		&& pq->size <= pq->capacity / 4
+		&& !pqu_shrink(pq))
+		return (false);
+	return (true);
+}
+
+t_bool	pq_peek(t_pq *pq, void *store)
+{
+	unsigned char	*root;
+
+	root = pq->container;
+	if (pq->size == 0)
+		return (false);
+	if (store)
+		memcpy(store, root, pq->data_size);
+	return (true);
+}

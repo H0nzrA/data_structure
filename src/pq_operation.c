@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:47:44 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/04 22:32:08 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/06 00:22:53 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,16 @@ static int	compare_value(t_pq *pq, size_t a, size_t b)
 	va = pq->container + a * pq->data_size;
 	vb = pq->container + b * pq->data_size;
 	return (pq->func_compare(va, vb));
+}
+
+static int	comparaison(t_pq *pq, size_t a, size_t b)
+{
+	int	res;
+
+	res = compare_value(pq, a, b);
+	if (pq->type == pqt_minheap)
+		return (res);
+	return (-res);
 }
 
 void	pqu_swap(t_pq *pq, size_t a, size_t b)
@@ -51,7 +61,7 @@ void	pqu_shift_up(t_pq *pq, size_t index)
 	while (index != 0)
 	{
 		parent = pqu_parent_node(index);
-		if (compare_value(pq, index, parent) <= 0)
+		if (comparaison(pq, index, parent) <= 0)
 			break ;
 		pqu_swap(pq, index, parent);
 		index = parent;
@@ -67,9 +77,9 @@ void	pqu_shift_down(t_pq *pq, size_t index)
 	{
 		child = pqu_left_node(index);
 		right_child = pqu_right_node(index);
-		if (right_child < pq->size && compare_value(pq, child, right_child) < 0)
+		if (right_child < pq->size && comparaison(pq, child, right_child) < 0)
 			child = right_child;
-		if (compare_value(pq, index, child) >= 0)
+		if (comparaison(pq, index, child) >= 0)
 			break ;
 		pqu_swap(pq, index, child);
 		index = child;

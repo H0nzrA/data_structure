@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/04 22:32:47 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/06 00:20:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-t_bool	pq_init(t_pq *pq, size_t data_size, t_compare compare)
+t_bool	pq_init(t_pq *pq, size_t data_size, t_compare compare, t_pq_type type)
 {
 	pq->container = NULL;
 	pq->size = 0;
 	pq->capacity = 0;
 	pq->data_size = data_size;
 	pq->func_compare = compare;
+	pq->type = type;
 	return (true);
 }
 

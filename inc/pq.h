@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:11 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/06 00:25:08 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/09 23:11:22 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef enum e_bool
 {
 	false,
 	true
-}		t_bool;
+}					t_bool;
 
 typedef enum e_pq_type
 {
@@ -27,7 +27,7 @@ typedef enum e_pq_type
 	pqt_maxheap
 }					t_pq_type;
 
-typedef int (*	t_compare)(const void *a, const void *b);
+typedef int			(*	t_compare)(const void *a, const void *b);
 
 typedef struct s_pq
 {

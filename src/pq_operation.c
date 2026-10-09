@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:47:44 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/06 00:22:53 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/09 23:08:00 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static int	comparaison(t_pq *pq, size_t a, size_t b)
 
 	res = compare_value(pq, a, b);
 	if (pq->type == pqt_minheap)
-		return (res);
-	return (-res);
+		return (-res);
+	return (res);
 }
 
 void	pqu_swap(t_pq *pq, size_t a, size_t b)

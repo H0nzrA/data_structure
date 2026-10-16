@@ -31,7 +31,7 @@ t_bool	heapu_grow(t_heap *heap)
 	i = 0;
 	while (i < heap->size)
 	{
-		memcpy(new_container + i * heap->data_size, heap->container + i
+		ft_memcpy(new_container + i * heap->data_size, heap->container + i
 			* heap->data_size, heap->data_size);
 		i++;
 	}
@@ -56,7 +56,7 @@ t_bool	heapu_shrink(t_heap *heap)
 	i = 0;
 	while (i < heap->size)
 	{
-		memcpy(new_container + i * heap->data_size, heap->container + i
+		ft_memcpy(new_container + i * heap->data_size, heap->container + i
 			* heap->data_size, heap->data_size);
 		i++;
 	}

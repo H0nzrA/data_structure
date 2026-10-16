@@ -45,7 +45,7 @@ t_bool	heap_push(t_heap *heap, void *data)
 	if (heap->size == heap->capacity && !heapu_grow(heap))
 		return (False);
 	index = heap->size;
-	memcpy(heap->container + index * heap->data_size, data, heap->data_size);
+	ft_memcpy(heap->container + index * heap->data_size, data, heap->data_size);
 	heap->size++;
 	heapu_shift_up(heap, index);
 	return (True);
@@ -61,9 +61,9 @@ t_bool	heap_pop(t_heap *heap, void *store)
 	if (heap->size == 0)
 		return (False);
 	if (store)
-		memcpy(store, root, heap->data_size);
+		ft_memcpy(store, root, heap->data_size);
 	if (heap->size > 1)
-		memcpy(root, last, heap->data_size);
+		ft_memcpy(root, last, heap->data_size);
 	heap->size--;
 	heapu_shift_down(heap, 0);
 	if (heap->size > 1 && heap->size <= heap->capacity / 4
@@ -80,6 +80,6 @@ t_bool	heap_peek(t_heap *heap, void *store)
 	if (heap->size == 0)
 		return (False);
 	if (store)
-		memcpy(store, root, heap->data_size);
+		ft_memcpy(store, root, heap->data_size);
 	return (True);
 }

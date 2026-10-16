@@ -27,7 +27,7 @@ t_bool	heapu_grow(t_heap *heap)
 		new_capacity = heap->capacity * 2;
 	new_container = (unsigned char *)malloc(heap->data_size * new_capacity);
 	if (!new_container)
-		return (FALSE);
+		return (False);
 	i = 0;
 	while (i < heap->size)
 	{
@@ -38,7 +38,7 @@ t_bool	heapu_grow(t_heap *heap)
 	free(heap->container);
 	heap->container = new_container;
 	heap->capacity = new_capacity;
-	return (TRUE);
+	return (True);
 }
 
 t_bool	heapu_shrink(t_heap *heap)
@@ -48,11 +48,11 @@ t_bool	heapu_shrink(t_heap *heap)
 	size_t			i;
 
 	if (heap->capacity <= 1)
-		return (FALSE);
+		return (False);
 	new_capacity = heap->capacity / 4;
 	new_container = (unsigned char *)malloc(heap->data_size * new_capacity);
 	if (!new_container)
-		return (FALSE);
+		return (False);
 	i = 0;
 	while (i < heap->size)
 	{
@@ -63,5 +63,5 @@ t_bool	heapu_shrink(t_heap *heap)
 	free(heap->container);
 	heap->container = new_container;
 	heap->capacity = new_capacity;
-	return (TRUE);
+	return (True);
 }

@@ -24,7 +24,7 @@ t_bool	heap_init(t_heap *heap, size_t data_size, t_compare compare,
 	heap->data_size = data_size;
 	heap->func_compare = compare;
 	heap->type = type;
-	return (TRUE);
+	return (True);
 }
 
 t_bool	heap_destroy(t_heap *heap)
@@ -35,7 +35,7 @@ t_bool	heap_destroy(t_heap *heap)
 	heap->capacity = 0;
 	heap->data_size = 0;
 	heap->func_compare = NULL;
-	return (TRUE);
+	return (True);
 }
 
 t_bool	heap_push(t_heap *heap, void *data)
@@ -43,12 +43,12 @@ t_bool	heap_push(t_heap *heap, void *data)
 	size_t	index;
 
 	if (heap->size == heap->capacity && !heapu_grow(heap))
-		return (FALSE);
+		return (False);
 	index = heap->size;
 	memcpy(heap->container + index * heap->data_size, data, heap->data_size);
 	heap->size++;
 	heapu_shift_up(heap, index);
-	return (TRUE);
+	return (True);
 }
 
 t_bool	heap_pop(t_heap *heap, void *store)
@@ -59,7 +59,7 @@ t_bool	heap_pop(t_heap *heap, void *store)
 	root = heap->container;
 	last = heap->container + (heap->size - 1) * heap->data_size;
 	if (heap->size == 0)
-		return (FALSE);
+		return (False);
 	if (store)
 		memcpy(store, root, heap->data_size);
 	if (heap->size > 1)
@@ -68,8 +68,8 @@ t_bool	heap_pop(t_heap *heap, void *store)
 	heapu_shift_down(heap, 0);
 	if (heap->size > 1 && heap->size <= heap->capacity / 4
 		&& !heapu_shrink(heap))
-		return (FALSE);
-	return (TRUE);
+		return (False);
+	return (True);
 }
 
 t_bool	heap_peek(t_heap *heap, void *store)
@@ -78,8 +78,8 @@ t_bool	heap_peek(t_heap *heap, void *store)
 
 	root = heap->container;
 	if (heap->size == 0)
-		return (FALSE);
+		return (False);
 	if (store)
 		memcpy(store, root, heap->data_size);
-	return (TRUE);
+	return (True);
 }

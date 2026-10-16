@@ -15,8 +15,8 @@
 
 typedef enum e_bool
 {
-	FALSE,
-	TRUE
+	False,
+	True
 }	t_bool;
 
 #endif // !UTILS_H

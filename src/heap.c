@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/16 20:13:13 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/16 21:08:51 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,15 @@ t_bool	heap_push(t_heap *heap, void *data)
 {
 	size_t	index;
 
-	if (heap->size == heap->capacity && !heapu_grow(heap))
-		return (False);
+	if (heap->size == heap->capacity)
+	{
+		heap->capacity = ds_grow(
+			&heap->container, heap->capacity,
+			heap->data_size, heap->size
+		);
+		if (heap->capacity == 0)
+			return (False);
+	}
 	index = heap->size;
 	ft_memcpy(heap->container + index * heap->data_size, data, heap->data_size);
 	heap->size++;
@@ -66,9 +73,15 @@ t_bool	heap_pop(t_heap *heap, void *store)
 		ft_memcpy(root, last, heap->data_size);
 	heap->size--;
 	heapu_shift_down(heap, 0);
-	if (heap->size > 1 && heap->size <= heap->capacity / 4
-		&& !heapu_shrink(heap))
-		return (False);
+	if (heap->size > 1 && heap->size <= heap->capacity / 4)
+	{
+		heap->capacity = ds_shrink(
+			&heap->container, heap->capacity,
+			heap->data_size, heap->size
+		);
+		if (heap->capacity == 0)
+			return (False);
+	}
 	return (True);
 }
 

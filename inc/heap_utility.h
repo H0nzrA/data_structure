@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:14 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/16 16:01:43 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/16 20:33:39 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 # include "heap.h"
 # include <stdlib.h>
-
-t_bool	heapu_grow(t_heap *heap);
-t_bool	heapu_shrink(t_heap *heap);
 
 void	heapu_shift_up(t_heap *heap, size_t index);
 void	heapu_shift_down(t_heap *heap, size_t index);

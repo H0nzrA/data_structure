@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/16 15:53:42 by trakotoz          #+#    #+#              #
-#    Updated: 2026/10/16 20:31:01 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/10/16 20:42:05 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ INC_DIR 	:= inc
 OBJ_DIR		:= obj
 BUILD_DIR	:= build
 
-FILES	:= ft_memcpy \
-		   heap heap_memory heap_relation heap_operation \
+FILES	:= memory \
+		   heap heap_relation heap_operation \
 		   stack
 
 

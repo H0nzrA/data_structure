@@ -30,7 +30,7 @@ static int	comparaison(t_heap *heap, size_t a, size_t b)
 	int	res;
 
 	res = compare_value(heap, a, b);
-	if (heap->type == heapt_minheap)
+	if (heap->type == heap_min_type)
 		return (-res);
 	return (res);
 }

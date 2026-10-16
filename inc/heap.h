@@ -18,8 +18,8 @@
 
 typedef enum e_heap_type
 {
-	heapt_minheap,
-	heapt_maxheap
+	heap_min_type,
+	heap_max_type
 }					t_heap_type;
 
 typedef int			(*t_compare)(const void *a, const void *b);

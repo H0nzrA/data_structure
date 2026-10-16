@@ -30,9 +30,11 @@ static int	comparaison(t_heap *heap, size_t a, size_t b)
 	int	res;
 
 	res = compare_value(heap, a, b);
-	if (heap->type == heap_min_type)
+	if (heap->type == min_heap_type)
 		return (-res);
-	return (res);
+	if (heap->type == max_heap_type)
+		return (res);
+	return (0);
 }
 
 void	heapu_swap(t_heap *heap, size_t a, size_t b)

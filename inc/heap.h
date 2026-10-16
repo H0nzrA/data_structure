@@ -6,20 +6,15 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:11 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/16 16:01:33 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/16 20:12:41 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEAP_H
 # define HEAP_H
 
+# include "utils.h"
 # include <stdlib.h>
-
-typedef enum e_bool
-{
-	false,
-	true
-}					t_bool;
 
 typedef enum e_heap_type
 {

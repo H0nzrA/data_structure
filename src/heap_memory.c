@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:19 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/04 22:18:28 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/16 20:13:35 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_bool	heapu_grow(t_heap *heap)
 		new_capacity = heap->capacity * 2;
 	new_container = (unsigned char *)malloc(heap->data_size * new_capacity);
 	if (!new_container)
-		return (false);
+		return (FALSE);
 	i = 0;
 	while (i < heap->size)
 	{
@@ -38,7 +38,7 @@ t_bool	heapu_grow(t_heap *heap)
 	free(heap->container);
 	heap->container = new_container;
 	heap->capacity = new_capacity;
-	return (true);
+	return (TRUE);
 }
 
 t_bool	heapu_shrink(t_heap *heap)
@@ -48,11 +48,11 @@ t_bool	heapu_shrink(t_heap *heap)
 	size_t			i;
 
 	if (heap->capacity <= 1)
-		return (false);
+		return (FALSE);
 	new_capacity = heap->capacity / 4;
 	new_container = (unsigned char *)malloc(heap->data_size * new_capacity);
 	if (!new_container)
-		return (false);
+		return (FALSE);
 	i = 0;
 	while (i < heap->size)
 	{
@@ -63,5 +63,5 @@ t_bool	heapu_shrink(t_heap *heap)
 	free(heap->container);
 	heap->container = new_container;
 	heap->capacity = new_capacity;
-	return (true);
+	return (TRUE);
 }

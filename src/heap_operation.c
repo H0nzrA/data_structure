@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pq_operation.c                                     :+:      :+:    :+:   */
+/*   heap_operation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,42 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pq.h"
-#include "pq_utility.h"
-#include <string.h>
+#include "heap.h"
+#include "heap_utility.h"
 #include <stdlib.h>
+#include <string.h>
 
-static int	compare_value(t_pq *pq, size_t a, size_t b)
+static int	compare_value(t_heap *heap, size_t a, size_t b)
 {
 	unsigned char	*va;
 	unsigned char	*vb;
 
-	va = pq->container + a * pq->data_size;
-	vb = pq->container + b * pq->data_size;
-	return (pq->func_compare(va, vb));
+	va = heap->container + a * heap->data_size;
+	vb = heap->container + b * heap->data_size;
+	return (heap->func_compare(va, vb));
 }
 
-static int	comparaison(t_pq *pq, size_t a, size_t b)
+static int	comparaison(t_heap *heap, size_t a, size_t b)
 {
 	int	res;
 
-	res = compare_value(pq, a, b);
-	if (pq->type == pqt_minheap)
+	res = compare_value(heap, a, b);
+	if (heap->type == heapt_minheap)
 		return (-res);
 	return (res);
 }
 
-void	pqu_swap(t_pq *pq, size_t a, size_t b)
+void	heapu_swap(t_heap *heap, size_t a, size_t b)
 {
 	unsigned char	*va;
 	unsigned char	*vb;
 	unsigned char	tmp;
 	size_t			i;
 
-	va = pq->container + a * pq->data_size;
-	vb = pq->container + b * pq->data_size;
+	va = heap->container + a * heap->data_size;
+	vb = heap->container + b * heap->data_size;
 	i = 0;
-	while (i < pq->data_size)
+	while (i < heap->data_size)
 	{
 		tmp = va[i];
 		va[i] = vb[i];
@@ -54,34 +54,35 @@ void	pqu_swap(t_pq *pq, size_t a, size_t b)
 	}
 }
 
-void	pqu_shift_up(t_pq *pq, size_t index)
+void	heapu_shift_up(t_heap *heap, size_t index)
 {
 	size_t	parent;
 
 	while (index != 0)
 	{
-		parent = pqu_parent_node(index);
-		if (comparaison(pq, index, parent) <= 0)
+		parent = heapu_parent_node(index);
+		if (comparaison(heap, index, parent) <= 0)
 			break ;
-		pqu_swap(pq, index, parent);
+		heapu_swap(heap, index, parent);
 		index = parent;
 	}
 }
 
-void	pqu_shift_down(t_pq *pq, size_t index)
+void	heapu_shift_down(t_heap *heap, size_t index)
 {
 	size_t	child;
 	size_t	right_child;
 
-	while (pqu_left_node(index) < pq->size)
+	while (heapu_left_node(index) < heap->size)
 	{
-		child = pqu_left_node(index);
-		right_child = pqu_right_node(index);
-		if (right_child < pq->size && comparaison(pq, child, right_child) < 0)
+		child = heapu_left_node(index);
+		right_child = heapu_right_node(index);
+		if (right_child < heap->size && comparaison(heap, child,
+				right_child) < 0)
 			child = right_child;
-		if (comparaison(pq, index, child) >= 0)
+		if (comparaison(heap, index, child) >= 0)
 			break ;
-		pqu_swap(pq, index, child);
+		heapu_swap(heap, index, child);
 		index = child;
 	}
 }

@@ -1,4 +1,16 @@
-NAME	:= libpq.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/10/16 15:53:42 by trakotoz          #+#    #+#              #
+#    Updated: 2026/10/16 15:53:45 by trakotoz         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME	:= libds.a
 AR		:= ar rcs
 CC		:= cc
 CFLAGS	:= -Wall -Wextra -Werror -g
@@ -8,7 +20,7 @@ INC_DIR 	:= inc
 OBJ_DIR		:= obj
 BUILD_DIR	:= build
 
-FILES	:= pq pq_memory pq_relation pq_operation
+FILES	:= heap heap_memory heap_relation heap_operation
 
 
 SRCS	:= $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(FILES)))

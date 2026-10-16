@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pq_relation.c                                      :+:      :+:    :+:   */
+/*   heap_relation.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pq_utility.h"
+#include "heap_utility.h"
 
-size_t	pqu_parent_node(size_t index)
+size_t	heapu_parent_node(size_t index)
 {
 	return ((index - 1) / 2);
 }
 
-size_t	pqu_left_node(size_t index)
+size_t	heapu_left_node(size_t index)
 {
 	return (2 * index + 1);
 }
 
-size_t	pqu_right_node(size_t index)
+size_t	heapu_right_node(size_t index)
 {
 	return (2 * index + 2);
 }

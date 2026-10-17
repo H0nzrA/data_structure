@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   heap_relation.c                                    :+:      :+:    :+:   */
+/*   heapq_utility.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 21:05:31 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/04 21:05:58 by trakotoz         ###   ########.fr       */
+/*   Created: 2026/10/04 15:24:14 by trakotoz          #+#    #+#             */
+/*   Updated: 2026/10/16 20:33:39 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "heap_utility.h"
+#ifndef heapq_UTILITY_H
+# define heapq_UTILITY_H
 
-size_t	heapu_parent_node(size_t index)
-{
-	return ((index - 1) / 2);
-}
+# include "heapq.h"
+# include <stdlib.h>
 
-size_t	heapu_left_node(size_t index)
-{
-	return (2 * index + 1);
-}
+void	heapqu_shift_up(t_heapq *heapq, size_t index);
+void	heapqu_shift_down(t_heapq *heapq, size_t index);
+void	heapqu_swap(t_heapq *heapq, size_t a, size_t b);
 
-size_t	heapu_right_node(size_t index)
-{
-	return (2 * index + 2);
-}
+size_t	heapqu_parent_node(size_t index);
+size_t	heapqu_right_node(size_t index);
+size_t	heapqu_left_node(size_t index);
+
+#endif // !heapq_UTILITY_H

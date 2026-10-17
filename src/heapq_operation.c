@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   heap_operation.c                                   :+:      :+:    :+:   */
+/*   heapq_operation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,44 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "heap.h"
-#include "heap_utility.h"
+#include "heapq.h"
+#include "heapq_utility.h"
 #include <stdlib.h>
 #include <string.h>
 
-static int	compare_value(t_heap *heap, size_t a, size_t b)
+static int	compare_value(t_heapq *heapq, size_t a, size_t b)
 {
 	unsigned char	*va;
 	unsigned char	*vb;
 
-	va = heap->container + a * heap->data_size;
-	vb = heap->container + b * heap->data_size;
-	return (heap->func_compare(va, vb));
+	va = heapq->container + a * heapq->data_size;
+	vb = heapq->container + b * heapq->data_size;
+	return (heapq->func_compare(va, vb));
 }
 
-static int	comparaison(t_heap *heap, size_t a, size_t b)
+static int	comparaison(t_heapq *heapq, size_t a, size_t b)
 {
 	int	res;
 
-	res = compare_value(heap, a, b);
-	if (heap->type == min_heap_type)
+	res = compare_value(heapq, a, b);
+	if (heapq->type == min_heapq)
 		return (-res);
-	if (heap->type == max_heap_type)
+	if (heapq->type == max_heapq)
 		return (res);
 	return (0);
 }
 
-void	heapu_swap(t_heap *heap, size_t a, size_t b)
+void	heapqu_swap(t_heapq *heapq, size_t a, size_t b)
 {
 	unsigned char	*va;
 	unsigned char	*vb;
 	unsigned char	tmp;
 	size_t			i;
 
-	va = heap->container + a * heap->data_size;
-	vb = heap->container + b * heap->data_size;
+	va = heapq->container + a * heapq->data_size;
+	vb = heapq->container + b * heapq->data_size;
 	i = 0;
-	while (i < heap->data_size)
+	while (i < heapq->data_size)
 	{
 		tmp = va[i];
 		va[i] = vb[i];
@@ -56,35 +56,35 @@ void	heapu_swap(t_heap *heap, size_t a, size_t b)
 	}
 }
 
-void	heapu_shift_up(t_heap *heap, size_t index)
+void	heapqu_shift_up(t_heapq *heapq, size_t index)
 {
 	size_t	parent;
 
 	while (index != 0)
 	{
-		parent = heapu_parent_node(index);
-		if (comparaison(heap, index, parent) <= 0)
+		parent = heapqu_parent_node(index);
+		if (comparaison(heapq, index, parent) <= 0)
 			break ;
-		heapu_swap(heap, index, parent);
+		heapqu_swap(heapq, index, parent);
 		index = parent;
 	}
 }
 
-void	heapu_shift_down(t_heap *heap, size_t index)
+void	heapqu_shift_down(t_heapq *heapq, size_t index)
 {
 	size_t	child;
 	size_t	right_child;
 
-	while (heapu_left_node(index) < heap->size)
+	while (heapqu_left_node(index) < heapq->size)
 	{
-		child = heapu_left_node(index);
-		right_child = heapu_right_node(index);
-		if (right_child < heap->size && comparaison(heap, child,
+		child = heapqu_left_node(index);
+		right_child = heapqu_right_node(index);
+		if (right_child < heapq->size && comparaison(heapq, child,
 				right_child) < 0)
 			child = right_child;
-		if (comparaison(heap, index, child) >= 0)
+		if (comparaison(heapq, index, child) >= 0)
 			break ;
-		heapu_swap(heap, index, child);
+		heapqu_swap(heapq, index, child);
 		index = child;
 	}
 }

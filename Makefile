@@ -21,7 +21,7 @@ OBJ_DIR		:= obj
 BUILD_DIR	:= build
 
 FILES	:= memory \
-		   heap heap_relation heap_operation \
+		   heapq heapq_relation heapq_operation \
 		   stack
 
 

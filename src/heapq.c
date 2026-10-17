@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/17 12:28:27 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/17 13:37:14 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-t_bool	heapq_init(
+void	heapq_init(
 	t_heapq *heapq, size_t data_size,
 	t_compare compare, t_heapq_type type
 )
@@ -26,7 +26,6 @@ t_bool	heapq_init(
 	heapq->data_size = data_size;
 	heapq->func_compare = compare;
 	heapq->type = type;
-	return (True);
 }
 
 t_bool	heapq_destroy(t_heapq *heapq)

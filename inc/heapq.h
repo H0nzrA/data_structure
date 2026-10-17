@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:11 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/17 12:30:47 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/17 13:37:06 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_heapq
 	t_heapq_type	type;
 }					t_heapq;
 
-t_bool				heapq_init(
+void				heapq_init(
 	t_heapq *heapq,
 	size_t data_size,
 	t_compare compare,

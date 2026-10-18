@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/17 13:37:14 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/18 15:02:13 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,10 @@ t_bool	heapq_pop(t_heapq *heapq, void *store)
 	heapq->size--;
 	heapqu_shift_down(heapq, 0);
 	if (heapq->size > 1 && heapq->size <= heapq->capacity / 4)
-	{
 		heapq->capacity = ds_shrink(
 			&heapq->container, heapq->capacity,
 			heapq->data_size, heapq->size
 		);
-		if (heapq->capacity == 0)
-			return (False);
-	}
 	return (True);
 }
 

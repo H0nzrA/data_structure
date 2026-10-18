@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/16 15:53:42 by trakotoz          #+#    #+#              #
-#    Updated: 2026/10/17 13:35:36 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/10/17 14:07:16 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ BUILD_DIR	:= build
 
 FILES	:= memory \
 		   heapq heapq_relation heapq_operation \
-		   list list_operation
+		   list list_operation \
+		   stack stack_operation
 
 
 SRCS	:= $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(FILES)))
@@ -51,7 +52,7 @@ $(BUILD_DIR)	:
 	@ $(MKDIR) $@
 
 clean			:
-	@ $(RM) $(OBJS)
+	@ $(RM) $(OBJS) $(OBJ_DIR)
 
 fclean			: clean
 	@ $(RM) $(NAME)

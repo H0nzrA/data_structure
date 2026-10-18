@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:15:19 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/16 20:24:39 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/18 14:52:51 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ typedef struct e_stack
 	size_t			data_size;
 }					t_stack;
 
-t_bool				stack_init(t_stack *stack, size_t data_size);
-t_bool				stack_destroy(t_stack *stack);
+void				stack_init(t_stack *stack, size_t data_size);
+void				stack_destroy(t_stack *stack);
 
-t_bool				stack_push(t_stack *stack, void *data);
+t_bool				stack_push(t_stack *stack, const void *data);
 t_bool				stack_pop(t_stack *stack, void *store);
-t_bool				stack_peek(t_stack *stack, void *store);
+t_bool				stack_top(const t_stack *stack, void *store);
+t_bool				stack_is_empty(const t_stack *stack);
+size_t				stack_size(const t_stack *stack);
 
 #endif // !STACK_H

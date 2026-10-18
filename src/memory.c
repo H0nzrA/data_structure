@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:19 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/16 21:05:38 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/18 15:56:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ size_t	ds_grow(
 	while (++i < size)
 		ft_memcpy(
 			new_container + i * data_size,
-			container + i * data_size,
+			*container + i * data_size,
 			data_size
 		);
 	free(*container);
@@ -75,7 +75,7 @@ size_t	ds_shrink(
 	size_t			i;
 
 	if (capacity <= 1)
-		return (0);
+		return (capacity);
 	new_capacity = capacity / 4;
 	new_container = (unsigned char *)malloc(data_size * new_capacity);
 	if (!new_container)
@@ -84,7 +84,7 @@ size_t	ds_shrink(
 	while (++i < size)
 		ft_memcpy(
 			new_container + i * data_size,
-			container + i * data_size,
+			*container + i * data_size,
 			data_size
 		);
 	free(*container);

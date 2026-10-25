@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/25 17:51:41 by trakotoz          #+#    #+#              #
-#    Updated: 2026/10/25 19:40:55 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/10/25 19:51:30 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ LIBFLAGS	:= -L. -lds
 
 TEST_DIR	:= tests
 TEST_FILE	:= $(TEST_DIR)/main_test.c
+TEST_OUT	:= test.out
 
 all		:
 	@ $(MAKE) -C $(DS_DIR)
@@ -34,11 +35,11 @@ clean	:
 
 fclean	:
 	@ $(MAKE) fclean -C $(DS_DIR)
-	@ rm -f $(LIB)
+	@ rm -f $(LIB) $(TEST_OUT)
 
 
 re		: fclean all
 
 
 test	: all
-	$(CC) $(CFlAGS) $(TEST_FILE) -I$(INCLUDES) $(LIBFLAGS) -o test.out
+	$(CC) $(CFlAGS) $(TEST_FILE) -I$(INCLUDES) $(LIBFLAGS) -o $(TEST_OUT)

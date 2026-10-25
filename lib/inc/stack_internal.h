@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 17:56:43 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 17:56:52 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 20:48:50 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "stack.h"
 
+/**
+ * @brief Stores the internal state and metadata of a stack.
+ */
 typedef struct e_stack
 {
 	unsigned char	*container;

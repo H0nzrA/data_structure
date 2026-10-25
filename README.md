@@ -80,7 +80,7 @@ The list supports insertion and removal at both the front and back. Removed elem
 
 The priority queue supports minimum-heap and maximum-heap ordering. A comparison function determines the relative ordering of stored elements.
 
-Refer to the public headers in `inc/` for the available functions and their contracts.
+Refer to the public headers in `includes/` for the available functions and their contracts.
 
 ## Resources
 

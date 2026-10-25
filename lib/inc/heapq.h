@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:11 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 18:03:30 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 18:19:50 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_heapq					*heapq_create(
 	t_compare compare,
 	t_heapq_type type
 );
-t_bool					heapq_destroy(t_heapq *heapq);
+void					heapq_destroy(t_heapq *heapq);
 
 t_bool					heapq_push(t_heapq *heapq, void *data);
 t_bool					heapq_pop(t_heapq *heapq, void *store);

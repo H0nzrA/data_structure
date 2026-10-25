@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 12:35:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 18:06:18 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 18:34:26 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*list_create(size_t data_size)
 {
 	t_list *list;
 
+	if (!data_size)
+		return (NULL);
 	list = (t_list *) malloc(sizeof(t_list));
 	if (!list)
 		return (NULL);

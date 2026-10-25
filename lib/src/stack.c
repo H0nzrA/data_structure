@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:18:58 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 18:08:18 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 18:23:13 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_stack	*stack_create(size_t data_size)
 {
 	t_stack	*stack;
 
+	if (!data_size)
+		return (NULL);
 	stack = (t_stack *) malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);

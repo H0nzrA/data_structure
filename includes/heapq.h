@@ -18,7 +18,7 @@ t_heapq					*heapq_create(
 	t_compare compare,
 	t_heapq_type type
 );
-int						heapq_destroy(t_heapq *heapq);
+void					heapq_destroy(t_heapq *heapq);
 
 int						heapq_push(t_heapq *heapq, void *data);
 int						heapq_pop(t_heapq *heapq, void *store);

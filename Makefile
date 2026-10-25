@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/25 17:51:41 by trakotoz          #+#    #+#              #
-#    Updated: 2026/10/25 18:12:04 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/10/25 18:17:11 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,5 +40,5 @@ fclean	:
 re		: fclean all
 
 
-test	: $(LIB) | all
+test	: all
 	$(CC) $(CFlAGS) $(TEST_FILE) -I$(INCLUDES) $(LIBFLAGS) -o test

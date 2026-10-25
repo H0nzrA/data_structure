@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 18:05:05 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 18:34:04 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ t_heapq	*heapq_create(size_t data_size, t_compare compare, t_heapq_type type)
 {
 	t_heapq	*heapq;
 
+	if (!data_size || !compare)
+		return (NULL);
+	if (type != min_heapq && type != max_heapq)
+		return (NULL);
 	heapq = (t_heapq *) malloc(sizeof(t_heapq));
 	if (!heapq)
 		return (NULL);
-
 	heapq->container = NULL;
 	heapq->size = 0;
 	heapq->capacity = 0;
@@ -33,8 +36,10 @@ t_heapq	*heapq_create(size_t data_size, t_compare compare, t_heapq_type type)
 	return (heapq);
 }
 
-t_bool	heapq_destroy(t_heapq *heapq)
+void	heapq_destroy(t_heapq *heapq)
 {
+	if (!heapq)
+		return ;
 	if (heapq->container)
 		free(heapq->container);
 	heapq->size = 0;
@@ -42,13 +47,14 @@ t_bool	heapq_destroy(t_heapq *heapq)
 	heapq->data_size = 0;
 	heapq->func_compare = NULL;
 	free(heapq);
-	return (True);
 }
 
 t_bool	heapq_push(t_heapq *heapq, void *data)
 {
 	size_t	index;
 
+	if (!heapq || !data)
+		return (False);
 	if (heapq->size == heapq->capacity)
 	{
 		heapq->capacity = ds_grow(&heapq->container, heapq->capacity,
@@ -69,6 +75,8 @@ t_bool	heapq_pop(t_heapq *heapq, void *store)
 	unsigned char	*root;
 	unsigned char	*last;
 
+	if (!heapq)
+		return (False);
 	root = heapq->container;
 	last = heapq->container + (heapq->size - 1) * heapq->data_size;
 	if (heapq->size == 0)
@@ -89,6 +97,8 @@ t_bool	heapq_peek(t_heapq *heapq, void *store)
 {
 	unsigned char	*root;
 
+	if (!heapq)
+		return (False);
 	root = heapq->container;
 	if (heapq->size == 0)
 		return (False);

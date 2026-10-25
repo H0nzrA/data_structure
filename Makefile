@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/25 17:51:41 by trakotoz          #+#    #+#              #
-#    Updated: 2026/10/25 19:38:33 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/10/25 19:40:55 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ TEST_FILE	:= $(TEST_DIR)/main_test.c
 
 all		:
 	@ $(MAKE) -C $(DS_DIR)
-	@ mv $(DS_DIR)/$(LIB) .
+	@ cp $(DS_DIR)/$(LIB) .
 
 
 clean	:

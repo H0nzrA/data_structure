@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/16 15:53:42 by trakotoz          #+#    #+#              #
-#    Updated: 2026/10/25 19:37:21 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/10/25 19:43:10 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,13 +47,13 @@ RM		:= rm -rf
 all				: $(NAME)
 
 
-$(NAME)			: $(OBJS) | $(BUILD_DIR)
+$(NAME)			: $(OBJS)
 	@ echo "$(C_BLUE)> [Buiding] archive ...$(C_RESET)"
 	@ $(AR) $(ARFLAGS) $(NAME) $^
 	@ echo "$(C_GREEN)> Archive Data Structure build: $(C_BLUE)$(NAME)$(C_RESET)"
 
 
-$(OBJ_DIR)/%.o	: $(SRC_DIR)/%.c $(OBJ_DIR)
+$(OBJ_DIR)/%.o	: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@ echo "$(C_BLUE)> [Compile]$(C_MAGENTA) $< ...$(C_RESET)"
 	@ $(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 

@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   stack_internal.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/16 20:18:58 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/18 03:04:21 by trakotoz         ###   ########.fr       */
+/*   Created: 2026/10/25 17:56:43 by trakotoz          #+#    #+#             */
+/*   Updated: 2026/10/25 17:56:52 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
-#include <stdlib.h>
+#ifndef STACK_INTERNAL_H
+# define STACK_INTERNAL_H
 
-void	stack_init(t_stack *stack, size_t data_size)
-{
-	stack->container = NULL;
-	stack->size = 0;
-	stack->capacity = 0;
-	stack->data_size = data_size;
-}
+# include "stack.h"
 
-void	stack_destroy(t_stack *stack)
+typedef struct e_stack
 {
-	if (stack)
-		free(stack->container);
-	stack->container = NULL;
-	stack->size = 0;
-	stack->capacity = 0;
-	stack->data_size = 0;
-}
+	unsigned char	*container;
+	size_t			size;
+	size_t			capacity;
+	size_t			data_size;
+}					t_stack;
+
+#endif // !STACK_INTERNAL_H

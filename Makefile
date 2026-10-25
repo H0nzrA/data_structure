@@ -5,57 +5,40 @@
 #                                                     +:+ +:+         +:+      #
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/10/16 15:53:42 by trakotoz          #+#    #+#              #
-#    Updated: 2026/10/17 14:07:16 by trakotoz         ###   ########.fr        #
+#    Created: 2026/10/25 17:51:41 by trakotoz          #+#    #+#              #
+#    Updated: 2026/10/25 18:12:04 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= libds.a
-AR		:= ar rcs
-CC		:= cc
-CFLAGS	:= -Wall -Wextra -Werror -g
+LIB				:= libds.a
 
-SRC_DIR		:= src
-INC_DIR 	:= inc
-OBJ_DIR		:= obj
-BUILD_DIR	:= build
+DS_DIR			:= lib
+DS_BUILD_DIR	:= $(DS_DIR)/build
 
-FILES	:= memory \
-		   heapq heapq_relation heapq_operation \
-		   list list_operation \
-		   stack stack_operation
+INCLUDES	:= includes
 
+CC			:= cc
+CFlAGS		:= -Wall -Wextra -Werror -g
+LIBFLAGS	:= -L. -lds
 
-SRCS	:= $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(FILES)))
-OBJS	:= $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(FILES)))
+TEST_DIR	:= tests
+TEST_FILE	:= $(TEST_DIR)/main_test.c
 
-
-MKDIR	:= mkdir -p
-RM		:= rm -rf
+all		:
+	@ $(MAKE) -C $(DS_DIR)
+	@ mv $(DS_BUILD_DIR)/$(LIB) .
 
 
-.PHONY	:= all clean fclean re
+clean	:
+	@ $(MAKE) clean -C $(DS_DIR)
 
 
-all				: $(NAME)
+fclean	:
+	@ $(MAKE) fclean -C $(DS_DIR)
 
-$(NAME)			: $(OBJS) | $(BUILD_DIR)
-	$(AR) $(BUILD_DIR)/$@ $^
 
-$(OBJ_DIR)/%.o	: $(SRC_DIR)/%.c $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+re		: fclean all
 
-$(OBJ_DIR)		:
-	@ $(MKDIR) $@
 
-$(BUILD_DIR)	:
-	@ $(MKDIR) $@
-
-clean			:
-	@ $(RM) $(OBJS) $(OBJ_DIR)
-
-fclean			: clean
-	@ $(RM) $(NAME)
-	@ $(RM) $(OBJ_DIR) $(BUILD_DIR)
-
-re				: fclean all
+test	: $(LIB) | all
+	$(CC) $(CFlAGS) $(TEST_FILE) -I$(INCLUDES) $(LIBFLAGS) -o test

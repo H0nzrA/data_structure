@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   heapq_internal.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/16 20:15:19 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/18 14:52:51 by trakotoz         ###   ########.fr       */
+/*   Created: 2026/10/25 17:43:09 by trakotoz          #+#    #+#             */
+/*   Updated: 2026/10/25 17:44:38 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-# define STACK_H
+#ifndef HEAPQ_INTERNAL_H
+# define HEAPQ_INTERNAL_H
 
-# include "utils.h"
-# include <stdlib.h>
+# include "heapq.h"
 
-typedef struct e_stack
+typedef struct s_heapq
 {
 	unsigned char	*container;
 	size_t			size;
 	size_t			capacity;
 	size_t			data_size;
-}					t_stack;
+	t_compare		func_compare;
+	t_heapq_type	type;
+}					t_heapq;
 
-void				stack_init(t_stack *stack, size_t data_size);
-void				stack_destroy(t_stack *stack);
-
-t_bool				stack_push(t_stack *stack, const void *data);
-t_bool				stack_pop(t_stack *stack, void *store);
-t_bool				stack_top(const t_stack *stack, void *store);
-t_bool				stack_is_empty(const t_stack *stack);
-size_t				stack_size(const t_stack *stack);
-
-#endif // !STACK_H
+#endif // !HEAPQ_INTERNAL_H

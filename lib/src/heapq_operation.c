@@ -6,11 +6,12 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:47:44 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/09 23:08:00 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 17:48:30 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "heapq.h"
+#include "heapq_internal.h"
 #include "heapq_utility.h"
 #include <stdlib.h>
 #include <string.h>

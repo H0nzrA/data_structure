@@ -6,19 +6,26 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 12:35:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/17 13:55:31 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 18:06:18 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
+#include "list_internal.h"
 #include <stdlib.h>
 
-void	list_init(t_list *list, size_t data_size)
+t_list	*list_create(size_t data_size)
 {
+	t_list *list;
+
+	list = (t_list *) malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
 	list->head = NULL;
 	list->tail = NULL;
 	list->size = 0;
 	list->data_size = data_size;
+	return (list);
 }
 
 void	list_destroy(t_list *list)
@@ -40,4 +47,5 @@ void	list_destroy(t_list *list)
 	list->tail = NULL;
 	list->size = 0;
 	list->data_size = 0;
+	free(list);
 }

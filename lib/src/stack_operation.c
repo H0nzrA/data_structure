@@ -6,11 +6,12 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:07:28 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/18 15:43:28 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 17:57:24 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
+#include "stack_internal.h"
 #include "utils.h"
 #include <stdint.h>
 

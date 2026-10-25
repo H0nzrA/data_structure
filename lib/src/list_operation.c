@@ -6,11 +6,12 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 13:14:01 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/17 13:53:33 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 17:56:08 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
+#include "list_internal.h"
 #include "utils.h"
 #include <stdlib.h>
 

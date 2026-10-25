@@ -9,6 +9,3 @@ obj/
 compile_commands.json
 .cache
 .vscode
-
-# Test C file compile
-main_test.c

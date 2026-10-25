@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 17:54:55 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 17:55:53 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 20:28:55 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "list.h"
 
+/**
+ * @brief Represents a node in a doubly linked list.
+ */
 typedef struct s_node
 {
 	unsigned char	*content;
@@ -22,6 +25,9 @@ typedef struct s_node
 	struct s_node	*prev;
 }					t_node;
 
+/**
+ * @brief Stores the state and metadata of a doubly linked list.
+ */
 typedef struct s_list
 {
 	t_node			*head;

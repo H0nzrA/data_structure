@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:47:44 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 17:48:30 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/25 20:21:40 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * @brief Compares two elements using the queue's comparison function.
+ * @param heapq Priority queue containing the elements.
+ * @param a Index of the first element.
+ * @param b Index of the second element.
+ * @return Result of comparing the two elements.
+ */
 static int	compare_value(t_heapq *heapq, size_t a, size_t b)
 {
 	unsigned char	*va;
@@ -26,6 +33,13 @@ static int	compare_value(t_heapq *heapq, size_t a, size_t b)
 	return (heapq->func_compare(va, vb));
 }
 
+/**
+ * @brief Compares two elements according to the heap's ordering mode.
+ * @param heapq Priority queue defining the ordering mode.
+ * @param a Index of the first element.
+ * @param b Index of the second element.
+ * @return Negative if a has higher priority, positive if b does.
+ */
 static int	comparaison(t_heapq *heapq, size_t a, size_t b)
 {
 	int	res;

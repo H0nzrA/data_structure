@@ -11,10 +11,11 @@ TEST_DIR	:= tests
 TEST_FILE	:= $(TEST_DIR)/main_test.c
 TEST_OUT	:= test.out
 
-all		:
+all		: $(LIB)
+
+$(LIB)	:
 	@ $(MAKE) -C $(DS_DIR)
 	@ cp $(DS_DIR)/$(LIB) .
-
 
 clean	:
 	@ $(MAKE) clean -C $(DS_DIR)

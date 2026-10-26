@@ -54,7 +54,7 @@ int						heapq_push(t_heapq *heapq, void *data);
  * @brief Removes the highest-priority element from the queue.
  * @param heapq Target priority queue.
  * @param store Buffer to receive the removed element, or NULL to discard it.
- * @return True if an element was removed, false otherwise.
+ * @return 1 if an element was removed, 0 otherwise.
  */
 int						heapq_pop(t_heapq *heapq, void *store);
 
@@ -62,7 +62,7 @@ int						heapq_pop(t_heapq *heapq, void *store);
  * @brief Copies the highest-priority element without removing it.
  * @param heapq Target priority queue.
  * @param store Buffer to receive the element.
- * @return True if an element exists, false otherwise.
+ * @return 1 if an element exists, 0 otherwise.
  */
 int						heapq_peek(t_heapq *heapq, void *store);
 

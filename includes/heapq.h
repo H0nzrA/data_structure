@@ -1,5 +1,5 @@
-#ifndef HEAPQ_H
-# define HEAPQ_H
+#ifndef H0NZRA_HEAPQ_H
+# define H0NZRA_HEAPQ_H
 
 # include <stdlib.h>
 
@@ -66,4 +66,4 @@ int						heapq_pop(t_heapq *heapq, void *store);
  */
 int						heapq_peek(t_heapq *heapq, void *store);
 
-#endif // !HEAPQ_H
+#endif // !H0NZRA_HEAPQ_H

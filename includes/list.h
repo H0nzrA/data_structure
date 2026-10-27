@@ -1,5 +1,5 @@
-#ifndef LIST_H
-# define LIST_H
+#ifndef H0NZRA_LIST_H
+# define H0NZRA_LIST_H
 
 # include <stdlib.h>
 
@@ -51,4 +51,4 @@ int						list_push_front(t_list *list, void *data);
  */
 int						list_pop_front(t_list *list, void *store);
 
-#endif // !LIST_H
+#endif // !H0NZRA_LIST_H

@@ -1,5 +1,5 @@
-#ifndef STACK_H
-# define STACK_H
+#ifndef H0NZRA_STACK_H
+# define H0NZRA_STACK_H
 
 # include <stdlib.h>
 
@@ -59,4 +59,4 @@ int						stack_is_empty(const t_stack *stack);
  */
 size_t					stack_size(const t_stack *stack);
 
-#endif // !STACK_H
+#endif // !H0NZRA_STACK_H

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIST_H
-# define LIST_H
+#ifndef H0NZRA_LIST_H
+# define H0NZRA_LIST_H
 
 # include "utils.h"
 # include <stdlib.h>
@@ -62,4 +62,4 @@ t_bool					list_push_front(t_list *list, void *data);
  */
 t_bool					list_pop_front(t_list *list, void *store);
 
-#endif // !LIST_H
+#endif // !H0NZRA_LIST_H

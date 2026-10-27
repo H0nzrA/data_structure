@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEAPQ_INTERNAL_H
-# define HEAPQ_INTERNAL_H
+#ifndef H0NZRA_HEAPQ_INTERNAL_H
+# define H0NZRA_HEAPQ_INTERNAL_H
 
 # include "heapq.h"
 /**
@@ -27,4 +27,4 @@ typedef struct s_heapq
 	t_heapq_type	type;
 }					t_heapq;
 
-#endif // !HEAPQ_INTERNAL_H
+#endif // !H0NZRA_HEAPQ_INTERNAL_H

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEAPQ_H
-# define HEAPQ_H
+#ifndef H0NZRA_HEAPQ_H
+# define H0NZRA_HEAPQ_H
 
 # include "utils.h"
 # include <stdlib.h>
@@ -81,4 +81,4 @@ t_bool					heapq_pop(t_heapq *heapq, void *store);
  */
 t_bool					heapq_peek(t_heapq *heapq, void *store);
 
-#endif // !HEAPQ_H
+#endif // !H0NZRA_HEAPQ_H

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIST_INTERNAL_H
-# define LIST_INTERNAL_H
+#ifndef H0NZRA_LIST_INTERNAL_H
+# define H0NZRA_LIST_INTERNAL_H
 
 # include "list.h"
 
@@ -36,4 +36,4 @@ typedef struct s_list
 	size_t			data_size;
 }					t_list;
 
-#endif // !LIST_INTERNAL_H
+#endif // !H0NZRA_LIST_INTERNAL_H

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_INTERNAL_H
-# define STACK_INTERNAL_H
+#ifndef H0NZRA_STACK_INTERNAL_H
+# define H0NZRA_STACK_INTERNAL_H
 
 # include "stack.h"
 
@@ -26,4 +26,4 @@ typedef struct e_stack
 	size_t			data_size;
 }					t_stack;
 
-#endif // !STACK_INTERNAL_H
+#endif // !H0NZRA_STACK_INTERNAL_H

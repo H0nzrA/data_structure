@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEAPQ_UTILITY_H
-# define HEAPQ_UTILITY_H
+#ifndef H0NZRA_HEAPQ_UTILITY_H
+# define H0NZRA_HEAPQ_UTILITY_H
 
 # include "heapq.h"
 # include <stdlib.h>
@@ -60,4 +60,4 @@ size_t	heapqu_right_node(size_t index);
  */
 size_t	heapqu_left_node(size_t index);
 
-#endif // !HEAPQ_UTILITY_H
+#endif // !H0NZRA_HEAPQ_UTILITY_H

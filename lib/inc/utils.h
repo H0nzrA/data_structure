@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef H0NZRA_UTILS_H
+# define H0NZRA_UTILS_H
 
 # include <stdlib.h>
 
@@ -63,4 +63,4 @@ size_t	ds_shrink(
 			size_t size
 		);
 
-#endif // !UTILS_H
+#endif // !H0NZRA_UTILS_H

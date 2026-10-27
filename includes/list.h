@@ -30,7 +30,8 @@ int						list_push_back(t_list *list, void *data);
 
 /**
  * @brief Removes the last element from the list.
- * @param list Target list; @param store Buffer for the removed element, or NULL to discard it.
+ * @param list Target list; @param store Buffer for the removed element,
+ *	or NULL to discard it.
  * @return 1 if an element was removed, 0 otherwise.
  */
 int						list_pop_back(t_list *list, void *store);
@@ -44,7 +45,8 @@ int						list_push_front(t_list *list, void *data);
 
 /**
  * @brief Removes the first element from the list.
- * @param list Target list; @param store Buffer for the removed element, or NULL to discard it.
+ * @param list Target list; @param store Buffer for the removed element,
+ * 	or NULL to discard it.
  * @return 1 if an element was removed, 0 otherwise.
  */
 int						list_pop_front(t_list *list, void *store);

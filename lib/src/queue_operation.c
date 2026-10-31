@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:22:32 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 21:54:03 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 22:42:40 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,23 @@
 #include "queue_internal.h"
 #include "utils.h"
 
-t_bool	queue_enqueue(t_queue *queue, const void *data)
+t_bool	queue_is_empty(const t_queue *queue)
 {
-	size_t	index;
-
-	if (!queue || !data)
-		return (False);
-	if (queue->size == queue->capacity)
-	{
-		queue->capacity = ds_grow(
-			&queue->container, queue->capacity,
-			queue->data_size, queue->size
-		);
-		if (queue->capacity == 0)
-			return (False);
-	}
-	index = (queue->front + queue->size) % queue->capacity;
-	ft_memcpy(
-		queue->container + index * queue->data_size,
-		data, queue->data_size
-	);
-	queue->size++;
-	return (True);
+	if (!queue)
+		return (True);
+	return ((t_bool)queue->size);
 }
 
-t_bool	queue_dequeue(t_queue *queue, void *store)
+size_t	queue_size(const t_queue *queue)
 {
-	if (!queue || queue->size == 0)
-		return (False);
-	if (store)
-		ft_memcpy(
-			store,
-			queue->container + queue->front * queue->data_size,
-			queue->data_size
-		);
-	queue->front = (queue->front + 1) % queue->capacity;
-	queue->size--;
-	return (True);
+	return (queue->size);
 }
 
-t_bool	queue_peek(const t_queue *queue, void *store)
+void	queue_clear(t_queue *queue)
 {
-	if (!queue || queue->size == 0)
-		return (False);
-	if (store)
-		ft_memcpy(
-			store,
-			queue->container + queue->front * queue->data_size,
-			queue->data_size
-		);
-	return (True);
+	if (queue->container)
+		free(queue->container);
+	queue->size = 0;
+	queue->capacity = 0;
+	queue->front = 0;
 }

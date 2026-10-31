@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:07:28 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 17:57:24 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 21:58:03 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_bool	stack_push(t_stack *stack, const void *data)
 {
 	size_t	offset;
 
-	if (!stack || !data || !stack->data_size)
+	if (!stack || !data)
 		return (False);
 	if (stack->size > SIZE_MAX / stack->data_size)
 		return (False);
@@ -42,7 +42,7 @@ t_bool	stack_pop(t_stack *stack, void *store)
 {
 	size_t	last;
 
-	if (!stack || !stack->data_size || !stack->size)
+	if (!stack || !stack->size)
 		return (False);
 	last = (stack->size - 1) * stack->data_size;
 	if (store)
@@ -60,7 +60,7 @@ t_bool	stack_top(const t_stack *stack, void *store)
 {
 	size_t	last;
 
-	if (!stack || !stack->data_size || !stack->size)
+	if (!stack || !stack->size)
 		return (False);
 	last = (stack->size - 1) * stack->data_size;
 	if (store)

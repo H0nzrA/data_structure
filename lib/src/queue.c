@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:15:42 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 21:54:34 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 21:56:15 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_queue	*queue_create(size_t data_size)
 {
 	t_queue	*queue;
 
+	if (!data_size)
+		return (NULL);
 	queue = (t_queue *)malloc(sizeof(t_queue));
 	if (!queue)
 		return (NULL);

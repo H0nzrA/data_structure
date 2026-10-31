@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 13:14:01 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 17:56:08 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 21:57:33 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_bool	list_push_back(t_list *list, void *data)
 {
 	t_node	*node;
 
-	if (!list || !data || !list->data_size)
+	if (!list || !data)
 		return (False);
 	node = (t_node *)malloc(sizeof(t_node));
 	if (!node)
@@ -46,7 +46,7 @@ t_bool	list_push_front(t_list *list, void *data)
 {
 	t_node	*node;
 
-	if (!list || !data || !list->data_size)
+	if (!list || !data)
 		return (False);
 	node = (t_node *)malloc(sizeof(t_node));
 	if (!node)
@@ -73,7 +73,7 @@ t_bool	list_pop_back(t_list *list, void *store)
 {
 	t_node	*last;
 
-	if (!list || !list->data_size || !list->tail)
+	if (!list || !list->tail)
 		return (False);
 	if (store)
 		ft_memcpy(store, list->tail->content, list->data_size);
@@ -93,7 +93,7 @@ t_bool	list_pop_front(t_list *list, void *store)
 {
 	t_node	*head;
 
-	if (!list || !list->data_size || !list->head)
+	if (!list || !list->head)
 		return (False);
 	if (store)
 		ft_memcpy(store, list->head->content, list->data_size);

@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:15:42 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 23:05:32 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 23:26:37 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_queue	*queue_create(size_t data_size)
 	if (!queue)
 		return (NULL);
 	queue->data_size = data_size;
+	queue->container = NULL;
 	queue->size = 0;
 	queue->capacity = 0;
 	queue->front = 0;

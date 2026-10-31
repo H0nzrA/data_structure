@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:22:32 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 23:04:16 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 23:26:59 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_bool	queue_is_empty(const t_queue *queue)
 {
 	if (!queue)
 		return (True);
-	return ((t_bool)queue->size);
+	return (queue->size);
 }
 
 size_t	queue_size(const t_queue *queue)
@@ -41,7 +41,7 @@ t_bool	queue_resize(t_queue *queue, size_t new_capacity)
 	size_t			i;
 	size_t			index;
 
-	if (!queue || new_capacity <= queue->size || new_capacity == 0)
+	if (!queue || new_capacity < queue->size || new_capacity == 0)
 		return (False);
 
 	new_container = (unsigned char *)malloc(queue->data_size * new_capacity);
@@ -70,7 +70,10 @@ t_bool	queue_grow(t_queue *queue)
 
 	if (!queue)
 		return (False);
-	capacity = queue->capacity * 2;
+	if (queue->capacity == 0)
+		capacity = 1;
+	else
+		capacity = queue->capacity * 2;
 	if (!queue_resize(queue, capacity))
 		return (False);
 	return (True);

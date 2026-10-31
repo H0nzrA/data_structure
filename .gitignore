@@ -1,6 +1,7 @@
 # Generated file
 *.a
 *.o
+*.d
 *.out
 build/
 obj/

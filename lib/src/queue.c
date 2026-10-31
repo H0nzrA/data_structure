@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:15:42 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 22:39:40 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 23:05:32 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,8 @@ t_bool	queue_enqueue(t_queue *queue, const void *data)
 
 	if (!queue || !data)
 		return (False);
-	if (queue->size == queue->capacity)
-	{
-		queue->capacity = ds_grow(
-			&queue->container, queue->capacity,
-			queue->data_size, queue->size
-		);
-		if (queue->capacity == 0)
-			return (False);
-	}
+	if (queue->size == queue->capacity && !queue_grow(queue))
+		return (False);
 	index = (queue->front + queue->size) % queue->capacity;
 	ft_memcpy(
 		queue->container + index * queue->data_size,
@@ -80,6 +73,8 @@ t_bool	queue_dequeue(t_queue *queue, void *store)
 		);
 	queue->front = (queue->front + 1) % queue->capacity;
 	queue->size--;
+	if (queue->size <= queue->capacity / 4 && !queue_shrink(queue))
+		return (False);
 	return (True);
 }
 

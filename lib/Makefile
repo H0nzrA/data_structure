@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/16 15:53:42 by trakotoz          #+#    #+#              #
-#    Updated: 2026/10/31 21:22:30 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/10/31 22:54:40 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ FILES	:= memory \
 		   heapq heapq_relation heapq_operation \
 		   list list_operation \
 		   stack stack_operation \
-		   queue queue_operation
+		   queue queue_memory
 
 
 SRCS	:= $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(FILES)))

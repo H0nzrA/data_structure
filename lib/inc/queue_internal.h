@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 20:59:06 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 21:42:13 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 22:59:46 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define H0NZRA_QUEUE_INTERNAL_H
 
 # include <stdlib.h>
+# include "utils.h"
 
 typedef struct s_queue
 {
@@ -23,5 +24,9 @@ typedef struct s_queue
 	size_t			data_size;
 	size_t			front;
 }					t_queue;
+
+t_bool	queue_resize(t_queue *queue, size_t new_capacity);
+t_bool	queue_grow(t_queue *queue);
+t_bool	queue_shrink(t_queue *queue);
 
 #endif // !H0NZRA_QUEUE_INTERNAL_H

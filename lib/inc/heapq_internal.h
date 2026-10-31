@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 17:43:09 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 20:12:40 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 21:15:13 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define H0NZRA_HEAPQ_INTERNAL_H
 
 # include "heapq.h"
+
 /**
  * @brief Stores the internal state of a heap-based priority queue.
  */

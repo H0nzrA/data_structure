@@ -48,7 +48,7 @@ void					heapq_destroy(t_heapq *heapq);
  * @param data Pointer to the element to copy.
  * @return 1 on success, 0 otherwise.
  */
-int						heapq_push(t_heapq *heapq, void *data);
+int						heapq_push(t_heapq *heapq, const void *data);
 
 /**
  * @brief Removes the highest-priority element from the queue.
@@ -64,6 +64,6 @@ int						heapq_pop(t_heapq *heapq, void *store);
  * @param store Buffer to receive the element.
  * @return 1 if an element exists, 0 otherwise.
  */
-int						heapq_peek(t_heapq *heapq, void *store);
+int						heapq_peek(const t_heapq *heapq, void *store);
 
 #endif // !H0NZRA_HEAPQ_H

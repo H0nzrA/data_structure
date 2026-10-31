@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:11 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 20:11:31 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/10/31 21:24:30 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void					heapq_destroy(t_heapq *heapq);
  * @param data Pointer to the element to copy.
  * @return True on success, false otherwise.
  */
-t_bool					heapq_push(t_heapq *heapq, void *data);
+t_bool					heapq_push(t_heapq *heapq, const void *data);
 
 /**
  * @brief Removes the highest-priority element from the queue.
@@ -79,6 +79,6 @@ t_bool					heapq_pop(t_heapq *heapq, void *store);
  * @param store Buffer to receive the element.
  * @return True if an element exists, false otherwise.
  */
-t_bool					heapq_peek(t_heapq *heapq, void *store);
+t_bool					heapq_peek(const t_heapq *heapq, void *store);
 
 #endif // !H0NZRA_HEAPQ_H

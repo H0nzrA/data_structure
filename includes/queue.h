@@ -9,7 +9,7 @@
 typedef struct s_queue	t_queue;
 
 /**
- * @brief Create an empty for elements for the specific size.
+ * @brief Create an empty queue for elements for the specific size.
  * @param data_size Size in bytes of each elements.
  * @return A pointer to the queue, NULL on failure.
  */

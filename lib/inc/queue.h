@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 19:06:46 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/01 12:03:34 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/01 13:09:05 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 typedef struct s_queue	t_queue;
 
 /**
- * @brief Create an empty for elements for the specific size.
+ * @brief Create an empty queue for elements for the specific size.
  * @param data_size Size in bytes of each elements.
  * @return A pointer to the queue, NULL on failure.
  */

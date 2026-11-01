@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:22:32 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 23:26:59 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/01 10:23:28 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 t_bool	queue_is_empty(const t_queue *queue)
 {
 	if (!queue)
-		return (True);
-	return (queue->size);
+		return (False);
+	return (queue->size == 0);
 }
 
 size_t	queue_size(const t_queue *queue)
@@ -28,8 +28,10 @@ size_t	queue_size(const t_queue *queue)
 
 void	queue_clear(t_queue *queue)
 {
-	if (queue->container)
-		free(queue->container);
+	if (!queue)
+		return ;
+	free(queue->container);
+	queue->container = NULL;
 	queue->size = 0;
 	queue->capacity = 0;
 	queue->front = 0;

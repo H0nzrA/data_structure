@@ -23,15 +23,16 @@ void					list_destroy(t_list *list);
 
 /**
  * @brief Appends a copy of an element to the list.
- * @param list Target list; @param data Pointer to the element to copy.
+ * @param list Target list
+ * @param data Pointer to the element to copy.
  * @return 1 on success, 0 otherwise.
  */
 int						list_push_back(t_list *list, void *data);
 
 /**
  * @brief Removes the last element from the list.
- * @param list Target list; @param store Buffer for the removed element,
- *	or NULL to discard it.
+ * @param list Target list
+ * @param store Buffer for the removed element, or NULL to discard it.
  * @return 1 if an element was removed, 0 otherwise.
  */
 int						list_pop_back(t_list *list, void *store);
@@ -45,8 +46,8 @@ int						list_push_front(t_list *list, void *data);
 
 /**
  * @brief Removes the first element from the list.
- * @param list Target list; @param store Buffer for the removed element,
- * 	or NULL to discard it.
+ * @param list Target list
+ * @param store Buffer for the removed element, or NULL to discard it.
  * @return 1 if an element was removed, 0 otherwise.
  */
 int						list_pop_front(t_list *list, void *store);

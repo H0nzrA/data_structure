@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 12:31:28 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 20:25:45 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/01 11:47:57 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,32 @@ void					list_destroy(t_list *list);
 
 /**
  * @brief Appends a copy of an element to the list.
- * @param list Target list; @param data Pointer to the element to copy.
+ * @param list Target list
+ * @param data Pointer to the element to copy.
  * @return True on success, false otherwise.
  */
 t_bool					list_push_back(t_list *list, void *data);
 
 /**
  * @brief Removes the last element from the list.
- * @param list Target list; @param store Buffer for the removed element, or NULL to discard it.
+ * @param list Target list
+ * @param store Buffer for the removed element, or NULL to discard it.
  * @return True if an element was removed, false otherwise.
  */
 t_bool					list_pop_back(t_list *list, void *store);
 
 /**
  * @brief Prepends a copy of an element to the list.
- * @param list Target list; @param data Pointer to the element to copy.
+ * @param list Target list
+ * @param data Pointer to the element to copy.
  * @return True on success, false otherwise.
  */
 t_bool					list_push_front(t_list *list, void *data);
 
 /**
  * @brief Removes the first element from the list.
- * @param list Target list; @param store Buffer for the removed element, or NULL to discard it.
+ * @param list Target list
+ * @param store Buffer for the removed element, or NULL to discard it.
  * @return True if an element was removed, false otherwise.
  */
 t_bool					list_pop_front(t_list *list, void *store);

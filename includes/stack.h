@@ -23,7 +23,7 @@ void					stack_destroy(t_stack *stack);
 
 /**
  * @brief Pushes a copy of an element onto the stack.
- * @param stack Target stack;
+ * @param stack Target stack
  * @param data Pointer to the element to copy.
  * @return 1 on success, 0 otherwise.
  */
@@ -31,7 +31,7 @@ int						stack_push(t_stack *stack, const void *data);
 
 /**
  * @brief Removes the top element from the stack.
- * @param stack Target stack;
+ * @param stack Target stack
  * @param store Buffer for the removed element, or NULL to discard it.
  * @return 1 if an element was removed, 0 otherwise.
  */
@@ -39,7 +39,7 @@ int						stack_pop(t_stack *stack, void *store);
 
 /**
  * @brief Copies the top element without removing it.
- * @param stack Stack to inspect;
+ * @param stack Stack to inspect
  * @param store Buffer to receive the element.
  * @return 1 if an element exists, 0 otherwise.
  */

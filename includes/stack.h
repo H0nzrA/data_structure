@@ -4,7 +4,7 @@
 # include <stdlib.h>
 
 /**
- * @brief Declares an opaque stack structure.
+ * @brief Represent a generic LIFO stack.
  */
 typedef struct e_stack	t_stack;
 

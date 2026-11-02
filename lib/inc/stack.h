@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:15:19 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/01 11:48:15 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/01 17:27:30 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 
 /**
- * @brief Declares an opaque stack structure.
+ * @brief Represent a generic LIFO stack.
  */
 typedef struct e_stack	t_stack;
 

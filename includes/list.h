@@ -52,4 +52,18 @@ int						list_push_front(t_list *list, void *data);
  */
 int						list_pop_front(t_list *list, void *store);
 
+/**
+ * @brief Checks whether the list is empty.
+ * @param list Pointer to the list to check.
+ * @return 1 if the list is empty or NULL, 0 otherwise.
+ */
+int						list_is_empty(const t_list *list);
+
+/**
+ * @brief Checks whether the list contains a cycle.
+ * @param list Pointer to the list to check.
+ * @return 1 if a cycle exists, 0 otherwise.
+ */
+int						list_have_loop(const t_list *list);
+
 #endif // !H0NZRA_LIST_H

@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 13:14:01 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 21:57:33 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/04 19:10:45 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,4 +107,30 @@ t_bool	list_pop_front(t_list *list, void *store)
 	free(head);
 	list->size--;
 	return (True);
+}
+
+t_bool	list_is_empty(const t_list *list)
+{
+	if (!list)
+		return (True);
+	return (list->size == 0);
+}
+
+t_bool	list_have_loop(const t_list *list)
+{
+	t_node	*tortois;
+	t_node	*hare;
+
+	if (!list)
+		return (False);
+	tortois = list->head;
+	hare = list->head;
+	while (hare && hare->next)
+	{
+		tortois = tortois->next;
+		hare = hare->next->next;
+		if (tortois == hare)
+			return (True);
+	}
+	return (False);
 }

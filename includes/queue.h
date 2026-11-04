@@ -3,6 +3,10 @@
 
 # include <stdlib.h>
 
+# ifdef __cplusplus
+extern "C" {
+# endif
+
 /**
  * @brief Represent a generic FIFO queue.
  */
@@ -64,5 +68,9 @@ size_t					queue_size(const t_queue *queue);
  * @param queue Queue to clear.
  */
 void					queue_clear(t_queue *queue);
+
+# ifdef __cplusplus
+}
+# endif
 
 #endif // !H0NZRA_QUEUE_H

@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:11 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 21:24:30 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/04 19:34:02 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,13 @@ t_bool					heapq_pop(t_heapq *heapq, void *store);
  * @return True if an element exists, false otherwise.
  */
 t_bool					heapq_peek(const t_heapq *heapq, void *store);
+
+
+t_heapq					heapq_ify(
+	const void *datas,
+	size_t size,
+	size_t data_size,
+	t_compare compare
+);
 
 #endif // !H0NZRA_HEAPQ_H

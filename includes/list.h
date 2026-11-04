@@ -3,6 +3,10 @@
 
 # include <stdlib.h>
 
+# ifdef __cplusplus
+extern "C" {
+# endif
+
 /**
  * @brief Declares an opaque doubly linked list structure.
  */
@@ -65,5 +69,9 @@ int						list_is_empty(const t_list *list);
  * @return 1 if a cycle exists, 0 otherwise.
  */
 int						list_have_loop(const t_list *list);
+
+# ifdef __cplusplus
+}
+# endif
 
 #endif // !H0NZRA_LIST_H

@@ -3,6 +3,10 @@
 
 # include <stdlib.h>
 
+# ifdef __cplusplus
+extern "C" {
+# endif
+
 /**
  * @brief Represent a generic LIFO stack.
  */
@@ -58,5 +62,9 @@ int						stack_is_empty(const t_stack *stack);
  * @return Number of elements in the stack.
  */
 size_t					stack_size(const t_stack *stack);
+
+# ifdef __cplusplus
+}
+# endif
 
 #endif // !H0NZRA_STACK_H

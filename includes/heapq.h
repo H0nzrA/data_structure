@@ -3,6 +3,10 @@
 
 # include <stdlib.h>
 
+# ifdef __cplusplus
+extern "C" {
+# endif
+
 /**
  * @brief Defines the ordering behavior of a heap-based priority queue.
  */
@@ -65,5 +69,9 @@ int						heapq_pop(t_heapq *heapq, void *store);
  * @return 1 if an element exists, 0 otherwise.
  */
 int						heapq_peek(const t_heapq *heapq, void *store);
+
+# ifdef __cplusplus
+}
+# endif
 
 #endif // !H0NZRA_HEAPQ_H

@@ -1,4 +1,5 @@
-LIB				:= libds.a
+LIB_STATIC		:= libds.a
+LIB_SHARED		:= libds.so
 DS_DIR			:= lib
 
 INCLUDES	:= includes
@@ -11,11 +12,20 @@ TEST_DIR	:= tests
 TEST_FILE	:= $(TEST_DIR)/main_test.c
 TEST_OUT	:= test.out
 
-all		: $(LIB)
+all		: static shared
+
+static	:
+	@ $(MAKE) $@ -C $(DS_DIR)
+	@ cp $(DS_DIR)/$(LIB_STATIC) .
+
+shared	:
+	@ $(MAKE) $@ -C $(DS_DIR)
+	@ cp $(DS_DIR)/$(LIB_SHARED) .
 
 $(LIB)	:
 	@ $(MAKE) -C $(DS_DIR)
-	@ cp $(DS_DIR)/$(LIB) .
+	@ cp $(DS_DIR)/$(LIB_STATIC) .
+	@ cp $(DS_DIR)/$(LIB_SHARED) .
 
 clean	:
 	@ $(MAKE) clean -C $(DS_DIR)
@@ -23,7 +33,7 @@ clean	:
 
 fclean	:
 	@ $(MAKE) fclean -C $(DS_DIR)
-	@ rm -f $(LIB) $(TEST_OUT)
+	@ rm -f $(LIB_STATIC) $(LIB_SHARED) $(TEST_OUT)
 
 
 re		: fclean all

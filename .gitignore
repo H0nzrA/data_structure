@@ -1,10 +1,12 @@
 # Generated file
 *.a
 *.o
+*.so
 *.d
 *.out
 build/
 obj/
+shared_obj/
 
 # IDE
 compile_commands.json

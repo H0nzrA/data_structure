@@ -14,18 +14,16 @@ TEST_OUT	:= test.out
 
 all		: static shared
 
+
 static	:
 	@ $(MAKE) $@ -C $(DS_DIR)
 	@ cp $(DS_DIR)/$(LIB_STATIC) .
+
 
 shared	:
 	@ $(MAKE) $@ -C $(DS_DIR)
 	@ cp $(DS_DIR)/$(LIB_SHARED) .
 
-$(LIB)	:
-	@ $(MAKE) -C $(DS_DIR)
-	@ cp $(DS_DIR)/$(LIB_STATIC) .
-	@ cp $(DS_DIR)/$(LIB_SHARED) .
 
 clean	:
 	@ $(MAKE) clean -C $(DS_DIR)
@@ -39,5 +37,5 @@ fclean	:
 re		: fclean all
 
 
-test	: all
+test	: static
 	$(CC) $(CFlAGS) $(TEST_FILE) -I$(INCLUDES) $(LIBFLAGS) -o $(TEST_OUT)

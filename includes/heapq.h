@@ -72,11 +72,36 @@ int						heapq_pop(t_heapq *heapq, void *store);
  */
 int						heapq_peek(const t_heapq *heapq, void *store);
 
+/**
+ * @brief Returns the number of elements in the heap.
+ * @param heapq The heap to inspect.
+ * @return The number of element, or 0 if heapq is NULL.
+ */
 size_t					heapq_size(const t_heapq *heapq);
+
+/**
+ * @brief Check whether the heap is empty.
+ * @param heapq The param to inspect.
+ * @return 1 if empty, 0 otherwise.
+ */
 int						heapq_is_empty(const t_heapq *heapq);
 
+/**
+ * @brief Change the heap type (min-heap or max_heap).
+ * @param heapq The heap to modify.
+ * @param type The new heap type.
+ * @return 1 on success, 0 on failure.
+ */
 int						heapq_set_type(t_heapq *heapq, t_heapq_type type);
+
+/**
+ * @brief Changes the comparaison function used by the heap.
+ * @param heapq The heap to modify.
+ * @param compare The new heap comparaison function.
+ * @return 1 on success, 0 on failuer.
+ */
 int						heapq_set_compare(t_heapq *heapq, t_compare compare);
+
 
 # ifdef __cplusplus
 }

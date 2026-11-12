@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:11 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/12 22:21:10 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 22:33:17 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,34 @@ t_bool					heapq_pop(t_heapq *heapq, void *store);
  */
 t_bool					heapq_peek(const t_heapq *heapq, void *store);
 
+/**
+ * @brief Returns the number of elements in the heap.
+ * @param heapq The heap to inspect.
+ * @return The number of element, or 0 if heapq is NULL.
+ */
 size_t					heapq_size(const t_heapq *heapq);
+
+/**
+ * @brief Check whether the heap is empty.
+ * @param heapq The param to inspect.
+ * @return True if empty, False otherwise.
+ */
 t_bool					heapq_is_empty(const t_heapq *heapq);
 
+/**
+ * @brief Change the heap type (min-heap or max_heap).
+ * @param heapq The heap to modify.
+ * @param type The new heap type.
+ * @return True on success, False on failure.
+ */
 t_bool					heapq_set_type(t_heapq *heapq, t_heapq_type type);
+
+/**
+ * @brief Changes the comparaison function used by the heap.
+ * @param heapq The heap to modify.
+ * @param compare The new heap comparaison function.
+ * @return True on success, False on failuer.
+ */
 t_bool					heapq_set_compare(t_heapq *heapq, t_compare compare);
 
 #endif // !H0NZRA_HEAPQ_H

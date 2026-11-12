@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/12 22:22:07 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 22:29:08 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,14 +135,14 @@ t_bool	heapq_set_compare(t_heapq *heapq, t_compare compare)
 	return (True);
 }
 
-size_t					heapq_size(const t_heapq *heapq)
+size_t	heapq_size(const t_heapq *heapq)
 {
 	if (!heapq)
-		return (-1);
+		return (0);
 	return (heapq->size);
 }
 
-t_bool					heapq_is_empty(const t_heapq *heapq)
+t_bool	heapq_is_empty(const t_heapq *heapq)
 {
 	if (!heapq)
 		return (False);

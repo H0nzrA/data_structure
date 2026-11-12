@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 17:43:09 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/12 21:47:33 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 22:40:58 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ size_t				heapqu_parent_node(size_t index);
  * @param index Index of the parent node.
  * @return Index of the right child node.
  */
-
 size_t				heapqu_right_node(size_t index);
 
 /**
@@ -72,6 +71,10 @@ size_t				heapqu_right_node(size_t index);
  */
 size_t				heapqu_left_node(size_t index);
 
+/**
+ * @brief Restore the heap property after modification.
+ * @param heapq The heap to restore.
+ */
 void				heapqu_heapify(t_heapq *heapq);
 
 #endif // !H0NZRA_HEAPQ_INTERNAL_H

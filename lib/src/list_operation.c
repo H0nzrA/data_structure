@@ -6,13 +6,14 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 13:14:01 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/04 19:10:45 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 20:20:40 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 #include "list_internal.h"
 #include "utils.h"
+#include <string.h>
 #include <stdlib.h>
 
 t_bool	list_push_back(t_list *list, void *data)
@@ -30,7 +31,7 @@ t_bool	list_push_back(t_list *list, void *data)
 		free(node);
 		return (False);
 	}
-	ft_memcpy(node->content, data, list->data_size);
+	memcpy(node->content, data, list->data_size);
 	node->next = NULL;
 	node->prev = list->tail;
 	if (list->tail)
@@ -57,7 +58,7 @@ t_bool	list_push_front(t_list *list, void *data)
 		free(node);
 		return (False);
 	}
-	ft_memcpy(node->content, data, list->data_size);
+	memcpy(node->content, data, list->data_size);
 	node->prev = NULL;
 	node->next = list->head;
 	if (list->head)
@@ -76,7 +77,7 @@ t_bool	list_pop_back(t_list *list, void *store)
 	if (!list || !list->tail)
 		return (False);
 	if (store)
-		ft_memcpy(store, list->tail->content, list->data_size);
+		memcpy(store, list->tail->content, list->data_size);
 	last = list->tail;
 	list->tail = last->prev;
 	if (list->tail)
@@ -96,7 +97,7 @@ t_bool	list_pop_front(t_list *list, void *store)
 	if (!list || !list->head)
 		return (False);
 	if (store)
-		ft_memcpy(store, list->head->content, list->data_size);
+		memcpy(store, list->head->content, list->data_size);
 	head = list->head;
 	list->head = head->next;
 	if (list->head)

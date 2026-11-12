@@ -6,13 +6,14 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:15:42 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 23:26:37 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 20:21:34 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "queue.h"
 #include "queue_internal.h"
 #include <stdlib.h>
+#include <string.h>
 
 t_queue	*queue_create(size_t data_size)
 {
@@ -54,7 +55,7 @@ t_bool	queue_enqueue(t_queue *queue, const void *data)
 	if (queue->size == queue->capacity && !queue_grow(queue))
 		return (False);
 	index = (queue->front + queue->size) % queue->capacity;
-	ft_memcpy(
+	memcpy(
 		queue->container + index * queue->data_size,
 		data, queue->data_size
 	);
@@ -67,7 +68,7 @@ t_bool	queue_dequeue(t_queue *queue, void *store)
 	if (!queue || queue->size == 0)
 		return (False);
 	if (store)
-		ft_memcpy(
+		memcpy(
 			store,
 			queue->container + queue->front * queue->data_size,
 			queue->data_size
@@ -84,7 +85,7 @@ t_bool	queue_peek(const t_queue *queue, void *store)
 	if (!queue || queue->size == 0)
 		return (False);
 	if (store)
-		ft_memcpy(
+		memcpy(
 			store,
 			queue->container + queue->front * queue->data_size,
 			queue->data_size

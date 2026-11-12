@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 23:31:04 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 20:20:08 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,13 @@ t_bool	heapq_push(t_heapq *heapq, const void *data)
 	{
 		heapq->capacity = ds_grow(
 			&heapq->container, heapq->capacity,
-			heapq->data_size, heapq->size
+			heapq->data_size
 		);
 		if (heapq->capacity == 0)
 			return (False);
 	}
 	index = heapq->size;
-	ft_memcpy(
+	memcpy(
 		heapq->container + index * heapq->data_size,
 		data, heapq->data_size
 	);
@@ -86,15 +86,15 @@ t_bool	heapq_pop(t_heapq *heapq, void *store)
 	if (heapq->size == 0)
 		return (False);
 	if (store)
-		ft_memcpy(store, root, heapq->data_size);
+		memcpy(store, root, heapq->data_size);
 	if (heapq->size > 1)
-		ft_memcpy(root, last, heapq->data_size);
+		memcpy(root, last, heapq->data_size);
 	heapq->size--;
 	heapqu_shift_down(heapq, 0);
 	if (heapq->size > 1 && heapq->size <= heapq->capacity / 4)
 		heapq->capacity = ds_shrink(
 			&heapq->container, heapq->capacity,
-			heapq->data_size, heapq->size
+			heapq->data_size
 		);
 	return (True);
 }
@@ -109,6 +109,6 @@ t_bool	heapq_peek(const t_heapq *heapq, void *store)
 	if (heapq->size == 0)
 		return (False);
 	if (store)
-		ft_memcpy(store, root, heapq->data_size);
+		memcpy(store, root, heapq->data_size);
 	return (True);
 }

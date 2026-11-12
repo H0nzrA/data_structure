@@ -6,13 +6,14 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:22:32 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/01 10:23:28 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 20:21:49 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "queue.h"
 #include "queue_internal.h"
 #include "utils.h"
+#include <string.h>
 
 t_bool	queue_is_empty(const t_queue *queue)
 {
@@ -53,7 +54,7 @@ t_bool	queue_resize(t_queue *queue, size_t new_capacity)
 	while (++i < queue->size)
 	{
 		index = (queue->front + i) % queue->capacity;
-		ft_memcpy(
+		memcpy(
 			new_container + i * queue->data_size,
 			queue->container + index * queue->data_size,
 			queue->data_size

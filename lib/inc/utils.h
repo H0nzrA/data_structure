@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:12:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 21:39:29 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 20:19:15 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,6 @@ typedef enum e_bool
 }		t_bool;
 
 /**
- * @brief Copies a specified number of bytes between memory regions.
- * @param dest Destination memory address.
- * @param src Source memory address.
- * @param n Number of bytes to copy.
- * @return Pointer to the destination memory.
- */
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-
-/**
- * @brief Copies a specified number of bytes between memory regions,
- *        handling overlapping regions safely.
- * @param dest Destination memory address.
- * @param src Source memory address.
- * @param n Number of bytes to copy.
- * @return Pointer to the destination memory.
- */
-void	*ft_memmove(void *dest, const void *src, size_t n);
-
-/**
  * @brief Grows a container's allocated capacity when needed.
  * @param container Address of the container pointer to resize.
  * @param capacity Current capacity in elements.
@@ -53,9 +34,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
  */
 size_t	ds_grow(
 			unsigned char **container,
-			size_t capacity,
-			size_t data_size,
-			size_t size
+			size_t capacity, size_t data_size
 		);
 
 /**
@@ -68,9 +47,7 @@ size_t	ds_grow(
  */
 size_t	ds_shrink(
 			unsigned char **container,
-			size_t capacity,
-			size_t data_size,
-			size_t size
+			size_t capacity, size_t data_size
 		);
 
 #endif // !H0NZRA_UTILS_H

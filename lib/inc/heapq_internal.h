@@ -33,14 +33,14 @@ typedef struct s_heapq
  * @param heapq Priority queue to modify.
  * @param index Index of the element to reposition.
  */
-void				heapqu_shift_up(t_heapq *heapq, size_t index);
+void				heapqu_sift_up(t_heapq *heapq, size_t index);
 
 /**
  * @brief Restores the heap property by moving an element downward.
  * @param heapq Priority queue to modify.
  * @param index Index of the element to reposition.
  */
-void				heapqu_shift_down(t_heapq *heapq, size_t index);
+void				heapqu_sift_down(t_heapq *heapq, size_t index);
 
 /**
  * @brief Swaps two elements in the priority queue.

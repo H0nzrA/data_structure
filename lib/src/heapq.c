@@ -70,7 +70,7 @@ t_bool	heapq_push(t_heapq *heapq, const void *data)
 		data, heapq->data_size
 	);
 	heapq->size++;
-	heapqu_shift_up(heapq, index);
+	heapqu_sift_up(heapq, index);
 	return (True);
 }
 
@@ -90,7 +90,7 @@ t_bool	heapq_pop(t_heapq *heapq, void *store)
 	if (heapq->size > 1)
 		memcpy(root, last, heapq->data_size);
 	heapq->size--;
-	heapqu_shift_down(heapq, 0);
+	heapqu_sift_down(heapq, 0);
 	if (heapq->size > 1 && heapq->size <= heapq->capacity / 4)
 		heapq->capacity = ds_shrink(
 			&heapq->container, heapq->capacity,

@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:47:44 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 23:31:07 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 21:28:46 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	heapqu_swap(t_heapq *heapq, size_t a, size_t b)
 	}
 }
 
-void	heapqu_shift_up(t_heapq *heapq, size_t index)
+void	heapqu_sift_up(t_heapq *heapq, size_t index)
 {
 	size_t	parent;
 
@@ -84,7 +84,7 @@ void	heapqu_shift_up(t_heapq *heapq, size_t index)
 	}
 }
 
-void	heapqu_shift_down(t_heapq *heapq, size_t index)
+void	heapqu_sift_down(t_heapq *heapq, size_t index)
 {
 	size_t	child;
 	size_t	right_child;
@@ -101,4 +101,18 @@ void	heapqu_shift_down(t_heapq *heapq, size_t index)
 		heapqu_swap(heapq, index, child);
 		index = child;
 	}
+}
+
+t_heapq	*heapq_ify(
+	const void *datas, size_t size,
+	size_t data_size, t_compare compare,
+	t_heapq_type type
+)
+{
+	t_heapq *heapq;
+
+	heapq = heapq_create(data_size, compare, type);
+	if (!heapq)
+		return (NULL);
+	return (heapq);
 }

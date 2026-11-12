@@ -55,7 +55,7 @@ static void test_heapq_min(void)
     if (!values)
         return;
 
-    heap = heapq_create(sizeof(int), compare_int, min_heapq);
+    heap = heapq_create(sizeof(int), compare_int, min_heap);
     CHECK(heap != NULL);
     if (!heap) {
         free(values);
@@ -97,7 +97,7 @@ static void test_heapq_max(void)
     int i;
 
     puts("[SUCCESS] heapq max-heap stress");
-    heap = heapq_create(sizeof(int), compare_int, max_heapq);
+    heap = heapq_create(sizeof(int), compare_int, max_heap);
     CHECK(heap != NULL);
     if (!heap)
         return;
@@ -132,7 +132,7 @@ static void test_heapq_copy_semantics(void)
     int output = 0;
 
     puts("[SUCCESS] heapq copies pushed values");
-    heap = heapq_create(sizeof(int), compare_int, min_heapq);
+    heap = heapq_create(sizeof(int), compare_int, min_heap);
     CHECK(heap != NULL);
     if (!heap)
         return;
@@ -277,14 +277,14 @@ static void run_broken_input_tests(void)
     int output = 0;
 
     puts("[BROKEN] invalid creation arguments");
-    CHECK(heapq_create(0, compare_int, min_heapq) == NULL);
-    CHECK(heapq_create(sizeof(int), NULL, min_heapq) == NULL);
+    CHECK(heapq_create(0, compare_int, min_heap) == NULL);
+    CHECK(heapq_create(sizeof(int), NULL, min_heap) == NULL);
     CHECK(heapq_create(sizeof(int), compare_int, (t_heapq_type)99) == NULL);
     CHECK(list_create(0) == NULL);
     CHECK(stack_create(0) == NULL);
 
     puts("[BROKEN] empty-container operations");
-    heap = heapq_create(sizeof(int), compare_int, min_heapq);
+    heap = heapq_create(sizeof(int), compare_int, min_heap);
     CHECK(heap != NULL);
     if (heap) {
         CHECK(heapq_pop(heap, &output) == 0);

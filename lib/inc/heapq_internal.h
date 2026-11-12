@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 17:43:09 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/31 23:30:35 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 21:47:33 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,7 @@ size_t				heapqu_right_node(size_t index);
  * @return Index of the left child node.
  */
 size_t				heapqu_left_node(size_t index);
+
+void				heapqu_heapify(t_heapq *heapq);
 
 #endif // !H0NZRA_HEAPQ_INTERNAL_H

@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:11 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/04 19:34:02 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 22:21:10 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
  */
 typedef enum e_heapq_type
 {
-	min_heapq,
-	max_heapq
+	min_heap,
+	max_heap
 }						t_heapq_type;
 
 /**
@@ -81,12 +81,10 @@ t_bool					heapq_pop(t_heapq *heapq, void *store);
  */
 t_bool					heapq_peek(const t_heapq *heapq, void *store);
 
+size_t					heapq_size(const t_heapq *heapq);
+t_bool					heapq_is_empty(const t_heapq *heapq);
 
-t_heapq					heapq_ify(
-	const void *datas,
-	size_t size,
-	size_t data_size,
-	t_compare compare
-);
+t_bool					heapq_set_type(t_heapq *heapq, t_heapq_type type);
+t_bool					heapq_set_compare(t_heapq *heapq, t_compare compare);
 
 #endif // !H0NZRA_HEAPQ_H

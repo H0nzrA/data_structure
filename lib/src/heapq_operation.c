@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:47:44 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/12 21:28:46 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/12 22:17:48 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ static int	comparaison(t_heapq *heapq, size_t a, size_t b)
 	int	res;
 
 	res = compare_value(heapq, a, b);
-	if (heapq->type == min_heapq)
+	if (heapq->type == min_heap)
 		return (-res);
-	if (heapq->type == max_heapq)
+	if (heapq->type == max_heap)
 		return (res);
 	return (0);
 }
@@ -103,16 +103,14 @@ void	heapqu_sift_down(t_heapq *heapq, size_t index)
 	}
 }
 
-t_heapq	*heapq_ify(
-	const void *datas, size_t size,
-	size_t data_size, t_compare compare,
-	t_heapq_type type
-)
+void	heapqu_heapify(t_heapq *heapq)
 {
-	t_heapq *heapq;
+	size_t	index;
 
-	heapq = heapq_create(data_size, compare, type);
-	if (!heapq)
-		return (NULL);
-	return (heapq);
+	index = heapq->size / 2;
+	while (index > 0)
+	{
+		index--;
+		heapqu_sift_down(heapq, index);
+	}
 }

@@ -12,8 +12,8 @@ extern "C" {
  */
 typedef enum e_heapq_type
 {
-	min_heapq,
-	max_heapq
+	min_heap,
+	max_heap
 }						t_heapq_type;
 
 /**
@@ -37,8 +37,10 @@ typedef struct s_heapq	t_heapq;
  * @param type Ordering mode: min-heap or max-heap.
  * @return Pointer to the queue, or NULL on failure.
  */
-t_heapq					*heapq_create(size_t data_size, t_compare compare,
-							t_heapq_type type);
+t_heapq					*heapq_create(
+	size_t data_size, t_compare compare,
+	t_heapq_type type
+);
 
 /**
  * @brief Releases the priority queue and its allocated resources.
@@ -69,6 +71,12 @@ int						heapq_pop(t_heapq *heapq, void *store);
  * @return 1 if an element exists, 0 otherwise.
  */
 int						heapq_peek(const t_heapq *heapq, void *store);
+
+size_t					heapq_size(const t_heapq *heapq);
+int						heapq_is_empty(const t_heapq *heapq);
+
+int						heapq_set_type(t_heapq *heapq, t_heapq_type type);
+int						heapq_set_compare(t_heapq *heapq, t_compare compare);
 
 # ifdef __cplusplus
 }

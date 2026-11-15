@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/12 22:29:08 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 18:12:41 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,12 @@ t_bool	heapq_push(t_heapq *heapq, const void *data)
 		return (False);
 	if (heapq->size == heapq->capacity)
 	{
-		heapq->capacity = ds_grow(
-			&heapq->container, heapq->capacity,
-			heapq->data_size
-		);
-		if (heapq->capacity == 0)
+		if (
+			!ds_grow(
+				&heapq->container, &heapq->capacity,
+				heapq->data_size
+			)
+		)
 			return (False);
 	}
 	index = heapq->size;
@@ -92,8 +93,8 @@ t_bool	heapq_pop(t_heapq *heapq, void *store)
 	heapq->size--;
 	heapqu_sift_down(heapq, 0);
 	if (heapq->size > 1 && heapq->size <= heapq->capacity / 4)
-		heapq->capacity = ds_shrink(
-			&heapq->container, heapq->capacity,
+		ds_shrink(
+			&heapq->container, &heapq->capacity,
 			heapq->data_size
 		);
 	return (True);

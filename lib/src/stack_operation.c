@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 14:07:28 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/12 20:21:22 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 18:16:02 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ t_bool	stack_push(t_stack *stack, const void *data)
 		return (False);
 	if (stack->size == stack->capacity)
 	{
-		stack->capacity = ds_grow(
-			&stack->container, stack->capacity,
-			stack->data_size
-		);
-		if (!stack->capacity)
+		if (
+			!ds_grow(
+				&stack->container, &stack->capacity,
+				stack->data_size
+			)
+		)
 			return (False);
 	}
 	offset = stack->size * stack->data_size;
@@ -50,8 +51,8 @@ t_bool	stack_pop(t_stack *stack, void *store)
 		memcpy(store, stack->container + last, stack->data_size);
 	stack->size--;
 	if (stack->size > 1 && stack->size <= stack->capacity / 4)
-		stack->capacity = ds_shrink(
-			&stack->container, stack->capacity,
+		ds_shrink(
+			&stack->container, &stack->capacity,
 			stack->data_size
 		);
 	return (True);

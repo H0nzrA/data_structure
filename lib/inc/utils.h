@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:12:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/12 20:19:15 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 18:08:33 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ typedef enum e_bool
  * @param capacity Current capacity in elements.
  * @param data_size Size in bytes of each element.
  * @param size Number of elements currently stored.
- * @return Updated capacity, or 0 on failure.
+ * @return True on success, False on failure.
  */
-size_t	ds_grow(
-			unsigned char **container,
-			size_t capacity, size_t data_size
-		);
+t_bool	ds_grow(
+		unsigned char **container,
+		size_t *capacity, size_t data_size
+	);
 
 /**
  * @brief Shrinks a container's allocated capacity when appropriate.
@@ -43,11 +43,11 @@ size_t	ds_grow(
  * @param capacity Current capacity in elements.
  * @param data_size Size in bytes of each element.
  * @param size Number of elements currently stored.
- * @return Updated capacity, or 0 on failure.
+ * @return True on success, False on failure.
  */
-size_t	ds_shrink(
-			unsigned char **container,
-			size_t capacity, size_t data_size
-		);
+t_bool	ds_shrink(
+		unsigned char **container,
+		size_t *capacity, size_t data_size
+	);
 
 #endif // !H0NZRA_UTILS_H

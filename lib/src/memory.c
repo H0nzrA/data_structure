@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:19 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/15 18:10:01 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 18:26:06 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_bool	ds_grow(
 	size_t			new_capacity;
 	unsigned char	*new_container;
 
-	if (capacity == 0)
+	if (*capacity == 0)
 		new_capacity = 1;
 	else
 		new_capacity = *capacity * 2;

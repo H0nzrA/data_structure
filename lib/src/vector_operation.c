@@ -6,13 +6,14 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 18:51:56 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/15 18:52:19 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 19:06:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include "vector_internal.h"
 #include "utils.h"
+#include <stdint.h>
 #include <string.h>
 
 t_bool	vector_push(t_vector *vector, void *data)
@@ -20,6 +21,8 @@ t_bool	vector_push(t_vector *vector, void *data)
 	size_t	offset;
 
 	if (!vector || !data)
+		return (False);
+	if (vector->size > SIZE_MAX / vector->data_size)
 		return (False);
 	if (vector->size == vector->capacity)
 		if (

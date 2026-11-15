@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/15 18:12:41 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 19:00:33 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,7 @@ void	heapq_destroy(t_heapq *heapq)
 {
 	if (!heapq)
 		return ;
-	if (heapq->container)
-		free(heapq->container);
-	heapq->size = 0;
-	heapq->capacity = 0;
-	heapq->data_size = 0;
-	heapq->func_compare = NULL;
+	free(heapq->container);
 	free(heapq);
 }
 

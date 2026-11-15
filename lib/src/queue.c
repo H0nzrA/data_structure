@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:15:42 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/12 20:21:34 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 19:01:09 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,7 @@ void	queue_destroy(t_queue *queue)
 {
 	if (!queue)
 		return ;
-	if (queue->container)
-		free(queue->container);
-	queue->container = NULL;
-	queue->data_size = 0;
-	queue->size = 0;
-	queue->capacity = 0;
-	queue->front = 0;
+	free(queue->container);
 	free(queue);
 }
 

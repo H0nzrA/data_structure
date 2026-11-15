@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/16 15:53:42 by trakotoz          #+#    #+#              #
-#    Updated: 2026/11/15 18:05:49 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/11/15 18:52:52 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ AR		:= ar
 CC		:= cc
 
 ARFLAGS		:= rcs
-CFLAGS		:= -Wall -Wextra -Werror -MMD -MP
+CFLAGS		:= -Wall -Wextra -Werror -MMD -MP -g # TODO: Remove -g
 PICFLAGS	:= -fPIC
 SFLAGS		:= -shared
 
@@ -37,7 +37,7 @@ FILES	:= memory \
 		   list list_operation \
 		   stack stack_operation \
 		   queue queue_memory \
-		   vector
+		   vector vector_operation
 
 
 SRCS		:= $(addprefix $(SRC_DIR)/, $(addsuffix .c, $(FILES)))

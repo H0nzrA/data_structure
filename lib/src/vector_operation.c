@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 18:51:56 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/15 19:07:36 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 19:29:39 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,18 @@ t_bool	vector_pop(t_vector *vector, void *store)
 	return (True);
 }
 
-t_bool	vector_at(t_vector *vector, size_t index, void *store)
+t_bool	vector_set(t_vector *vector, size_t index, void *data)
+{
+	size_t offset;
+
+	if (!vector || !data || (index >= vector->size))
+		return (False);
+	offset = index * vector->data_size;
+	memcpy(vector->container + offset, data, vector->data_size);
+	return (True);
+}
+
+t_bool	vector_get(t_vector *vector, size_t index, void *store)
 {
 	size_t	offset;
 

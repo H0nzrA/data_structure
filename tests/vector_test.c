@@ -20,10 +20,18 @@ int	main(void)
 			vector_destroy(vector);
 			return (2);
 		}
+	for (int i = 0; i < 20; i++)
+	{
+		if (!vector_set(vector, i, &(int){-42}))
+		{
+			vector_destroy(vector);
+			return (3);
+		}
+	}
 	int store;
 	for (int i = 0; i < 20; i++)
 	{
-		if (!vector_at(vector, i, &store))
+		if (!vector_get(vector, i, &store))
 		{
 			vector_destroy(vector);
 			return (3);

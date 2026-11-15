@@ -6,12 +6,13 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 21:15:42 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/15 19:01:09 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 19:05:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "queue.h"
 #include "queue_internal.h"
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -45,6 +46,8 @@ t_bool	queue_enqueue(t_queue *queue, const void *data)
 	size_t	index;
 
 	if (!queue || !data)
+		return (False);
+	if (queue->size > SIZE_MAX / queue->data_size)
 		return (False);
 	if (queue->size == queue->capacity && !queue_grow(queue))
 		return (False);

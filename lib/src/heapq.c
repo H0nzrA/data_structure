@@ -6,13 +6,14 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:16 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/15 19:00:33 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 19:04:20 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "heapq.h"
 #include "heapq_internal.h"
 #include "utils.h"
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -49,6 +50,8 @@ t_bool	heapq_push(t_heapq *heapq, const void *data)
 	size_t	index;
 
 	if (!heapq || !data)
+		return (False);
+	if (heapq->size > SIZE_MAX / heapq->data_size)
 		return (False);
 	if (heapq->size == heapq->capacity)
 	{

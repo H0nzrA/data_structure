@@ -6,21 +6,19 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 17:45:40 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/15 18:39:48 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 18:58:29 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include "vector_internal.h"
-#include "utils.h"
 #include <stdlib.h>
-#include <string.h>
 
 t_vector	*vector_create(size_t data_size)
 {
 	t_vector	*vector;
 
-	if (data_size == 0)
+	if (!data_size)
 		return (NULL);
 	vector = (t_vector *)malloc(sizeof(t_vector));
 	if (!vector)
@@ -36,49 +34,34 @@ void	vector_destroy(t_vector *vector)
 {
 	if (!vector)
 		return ;
-	if (vector->container)
-		free(vector->container);
+	free(vector->container);
 	vector->container = NULL;
 	vector->size = 0;
 	vector->capacity = 0;
 	free(vector);
 }
 
-t_bool	vector_push(t_vector *vector, void *data)
+size_t	vector_size(t_vector *vector)
 {
-	size_t	offset;
-
-	if (!vector || !data)
-		return (False);
-	if (vector->size == vector->capacity)
-		if (
-			!ds_grow(
-				&vector->container,
-				&vector->capacity, vector->data_size
-			)
-		)
-			return (False);
-	offset = vector->size * vector->data_size;
-	memcpy(vector->container + offset, data, vector->data_size);
-	vector->size++;
-	return (True);
+	if (!vector)
+		return (0);
+	return (vector->size);
 }
 
-t_bool	vector_pop(t_vector *vector, void *store)
+t_bool	vector_is_empty(t_vector *vector)
 {
-	size_t	last;
-
-	if (!vector || !vector->size)
+	if (!vector)
 		return (False);
+	return (vector->size == 0);
+}
 
-	last = (vector->size - 1) * vector->data_size;
-	if (store)
-		memcpy(store, vector->container + last, vector->data_size);
-	vector->size--;
-	if (vector->size > 1 && vector->size <= vector->capacity / 4)
-		ds_shrink(
-			&vector->container, &vector->capacity,
-			vector->data_size
-		);
-	return (True);
+void	vector_clear(t_vector *vector)
+{
+	if (!vector)
+		return ;
+	if (vector->container)
+		free(vector->container);
+	vector->container = NULL;
+	vector->size = 0;
+	vector->capacity = 0;
 }

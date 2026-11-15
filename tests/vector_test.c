@@ -1,4 +1,4 @@
-#include "vector.h"
+#include "../lib/inc/vector.h"
 #include <stdio.h>
 
 int	main(void)
@@ -23,7 +23,7 @@ int	main(void)
 	int store;
 	for (int i = 0; i < 20; i++)
 	{
-		if (!vector_pop(vector, &store))
+		if (!vector_at(vector, i, &store))
 		{
 			vector_destroy(vector);
 			return (3);

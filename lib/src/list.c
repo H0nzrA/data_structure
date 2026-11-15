@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 12:35:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/10/25 18:34:26 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/15 19:00:46 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,5 @@ void	list_destroy(t_list *list)
 		free(node);
 		node = next;
 	}
-	list->head = NULL;
-	list->tail = NULL;
-	list->size = 0;
-	list->data_size = 0;
 	free(list);
 }

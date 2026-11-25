@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 17:45:40 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/15 18:58:29 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/25 21:42:07 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ size_t	vector_size(t_vector *vector)
 	if (!vector)
 		return (0);
 	return (vector->size);
+}
+
+size_t	vector_capacity(t_vector *vector)
+{
+	if (!vector)
+		return (0);
+	return (vector->capacity);
 }
 
 t_bool	vector_is_empty(t_vector *vector)

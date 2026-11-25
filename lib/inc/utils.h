@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:12:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/17 21:22:20 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/25 21:29:55 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ t_bool	ds_grow(
 t_bool	ds_shrink(
 	unsigned char **container,
 	size_t *capacity, size_t data_size
+);
+
+t_bool	ds_reserve(
+	unsigned char **container,
+	size_t *capacity, size_t data_size,
+	size_t reserve
 );
 
 #endif // !H0NZRA_UTILS_H

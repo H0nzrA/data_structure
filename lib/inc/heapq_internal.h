@@ -33,14 +33,14 @@ typedef struct s_heapq
  * @param heapq Priority queue to modify.
  * @param index Index of the element to reposition.
  */
-void				heapqu_sift_up(t_heapq *heapq, size_t index);
+void				heapq_sift_up(t_heapq *heapq, size_t index);
 
 /**
  * @brief Restores the heap property by moving an element downward.
  * @param heapq Priority queue to modify.
  * @param index Index of the element to reposition.
  */
-void				heapqu_sift_down(t_heapq *heapq, size_t index);
+void				heapq_sift_down(t_heapq *heapq, size_t index);
 
 /**
  * @brief Swaps two elements in the priority queue.
@@ -48,33 +48,33 @@ void				heapqu_sift_down(t_heapq *heapq, size_t index);
  * @param a Index of the first element.
  * @param b Index of the second element.
  */
-void				heapqu_swap(t_heapq *heapq, size_t a, size_t b);
+void				heapq_swap(t_heapq *heapq, size_t a, size_t b);
 
 /**
  * @brief Calculates the parent index of a node.
  * @param index Index of the node.
  * @return Index of the parent node.
  */
-size_t				heapqu_parent_node(size_t index);
+size_t				heapq_parent_node(size_t index);
 
 /**
  * @brief Calculates the right child index of a node.
  * @param index Index of the parent node.
  * @return Index of the right child node.
  */
-size_t				heapqu_right_node(size_t index);
+size_t				heapq_right_node(size_t index);
 
 /**
  * @brief Calculates the left child index of a node.
  * @param index Index of the parent node.
  * @return Index of the left child node.
  */
-size_t				heapqu_left_node(size_t index);
+size_t				heapq_left_node(size_t index);
 
 /**
  * @brief Restore the heap property after modification.
  * @param heapq The heap to restore.
  */
-void				heapqu_heapify(t_heapq *heapq);
+void				heapq_heapify(t_heapq *heapq);
 
 #endif // !H0NZRA_HEAPQ_INTERNAL_H

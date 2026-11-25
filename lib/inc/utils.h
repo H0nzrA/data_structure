@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:12:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/15 18:08:33 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/17 21:22:20 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ typedef enum e_bool
  * @return True on success, False on failure.
  */
 t_bool	ds_grow(
-		unsigned char **container,
-		size_t *capacity, size_t data_size
-	);
+	unsigned char **container,
+	size_t *capacity, size_t data_size
+);
 
 /**
  * @brief Shrinks a container's allocated capacity when appropriate.
@@ -46,8 +46,8 @@ t_bool	ds_grow(
  * @return True on success, False on failure.
  */
 t_bool	ds_shrink(
-		unsigned char **container,
-		size_t *capacity, size_t data_size
-	);
+	unsigned char **container,
+	size_t *capacity, size_t data_size
+);
 
 #endif // !H0NZRA_UTILS_H

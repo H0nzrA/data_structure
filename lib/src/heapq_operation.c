@@ -51,7 +51,7 @@ static int	comparaison(t_heapq *heapq, size_t a, size_t b)
 	return (0);
 }
 
-void	heapqu_swap(t_heapq *heapq, size_t a, size_t b)
+void	heapq_swap(t_heapq *heapq, size_t a, size_t b)
 {
 	unsigned char	*va;
 	unsigned char	*vb;
@@ -70,40 +70,40 @@ void	heapqu_swap(t_heapq *heapq, size_t a, size_t b)
 	}
 }
 
-void	heapqu_sift_up(t_heapq *heapq, size_t index)
+void	heapq_sift_up(t_heapq *heapq, size_t index)
 {
 	size_t	parent;
 
 	while (index != 0)
 	{
-		parent = heapqu_parent_node(index);
+		parent = heapq_parent_node(index);
 		if (comparaison(heapq, index, parent) <= 0)
 			break ;
-		heapqu_swap(heapq, index, parent);
+		heapq_swap(heapq, index, parent);
 		index = parent;
 	}
 }
 
-void	heapqu_sift_down(t_heapq *heapq, size_t index)
+void	heapq_sift_down(t_heapq *heapq, size_t index)
 {
 	size_t	child;
 	size_t	right_child;
 
-	while (heapqu_left_node(index) < heapq->size)
+	while (heapq_left_node(index) < heapq->size)
 	{
-		child = heapqu_left_node(index);
-		right_child = heapqu_right_node(index);
+		child = heapq_left_node(index);
+		right_child = heapq_right_node(index);
 		if (right_child < heapq->size && comparaison(heapq, child,
 				right_child) < 0)
 			child = right_child;
 		if (comparaison(heapq, index, child) >= 0)
 			break ;
-		heapqu_swap(heapq, index, child);
+		heapq_swap(heapq, index, child);
 		index = child;
 	}
 }
 
-void	heapqu_heapify(t_heapq *heapq)
+void	heapq_heapify(t_heapq *heapq)
 {
 	size_t	index;
 
@@ -111,6 +111,6 @@ void	heapqu_heapify(t_heapq *heapq)
 	while (index > 0)
 	{
 		index--;
-		heapqu_sift_down(heapq, index);
+		heapq_sift_down(heapq, index);
 	}
 }

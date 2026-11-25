@@ -12,17 +12,17 @@
 
 #include "heapq_internal.h"
 
-size_t	heapqu_parent_node(size_t index)
+size_t	heapq_parent_node(size_t index)
 {
 	return ((index - 1) / 2);
 }
 
-size_t	heapqu_left_node(size_t index)
+size_t	heapq_left_node(size_t index)
 {
 	return (2 * index + 1);
 }
 
-size_t	heapqu_right_node(size_t index)
+size_t	heapq_right_node(size_t index)
 {
 	return (2 * index + 2);
 }

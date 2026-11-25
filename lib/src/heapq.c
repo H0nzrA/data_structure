@@ -69,7 +69,7 @@ t_bool	heapq_push(t_heapq *heapq, const void *data)
 		data, heapq->data_size
 	);
 	heapq->size++;
-	heapqu_sift_up(heapq, index);
+	heapq_sift_up(heapq, index);
 	return (True);
 }
 
@@ -89,7 +89,7 @@ t_bool	heapq_pop(t_heapq *heapq, void *store)
 	if (heapq->size > 1)
 		memcpy(root, last, heapq->data_size);
 	heapq->size--;
-	heapqu_sift_down(heapq, 0);
+	heapq_sift_down(heapq, 0);
 	if (heapq->size > 1 && heapq->size <= heapq->capacity / 4)
 		ds_shrink(
 			&heapq->container, &heapq->capacity,
@@ -119,7 +119,7 @@ t_bool	heapq_set_type(t_heapq *heapq, t_heapq_type type)
 	if (type != min_heap && type != max_heap)
 		return (False);
 	heapq->type = type;
-	heapqu_heapify(heapq);
+	heapq_heapify(heapq);
 	return (True);
 }
 
@@ -130,7 +130,7 @@ t_bool	heapq_set_compare(t_heapq *heapq, t_compare compare)
 	if (!compare)
 		return (False);
 	heapq->func_compare = compare;
-	heapqu_heapify(heapq);
+	heapq_heapify(heapq);
 	return (True);
 }
 

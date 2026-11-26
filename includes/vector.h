@@ -3,6 +3,10 @@
 
 # include <stdlib.h>
 
+# ifdef __cplusplus
+extern "C" {
+# endif
+
 /**
  * @brief Represent a generic dynamic array.
  */
@@ -90,5 +94,9 @@ int						vector_get(t_vector *vector, size_t index, void *store);
  * @return 1 on success, 0 otherwise
  */
 int						vector_reserve(t_vector *vector, size_t reserve);
+
+# ifdef __cplusplus
+}
+# endif
 
 #endif // !H0NZRA_VECTOR_H

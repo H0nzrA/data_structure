@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 17:41:58 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/26 20:26:40 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/26 20:40:31 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,21 @@ t_bool					vector_pop(t_vector *vector, void *store);
  * @param vector Vector to inspect.
  * @return Number of element in the vector.
  */
-size_t					vector_size(t_vector *vector);
+size_t					vector_size(const t_vector *vector);
 
 /**
  * @brief Get the current capacity of the vector.
  * @param vector Vector to query
  * @return Number of element the vector can hold withoud reallocation.
  */
-size_t					vector_capacity(t_vector *vector);
+size_t					vector_capacity(const t_vector *vector);
 
 /**
  * @brief Checke whether the vector is empty.
  * @param vector Vector to inspect.
  * @return 1 if empty, 0 otherwise.
  */
-t_bool					vector_is_empty(t_vector *vector);
+t_bool					vector_is_empty(const t_vector *vector);
 
 /**
  * @brief Remove all the element from the vector without releasing its allocated memory.
@@ -93,7 +93,7 @@ t_bool					vector_set(t_vector *vector, size_t index, void *data);
  * @param store Destination storage for the copied element.
  * @return 1 on success, 0 otherwise.
  */
-t_bool					vector_get(t_vector *vector, size_t index, void *store);
+t_bool					vector_get(const t_vector *vector, size_t index, void *store);
 
 /**
  * @brief Ensure the vector has at least the specific capacity.

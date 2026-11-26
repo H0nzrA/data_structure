@@ -46,21 +46,21 @@ int						vector_pop(t_vector *vector, void *store);
  * @param vector Vector to inspect.
  * @return Number of element in the vector.
  */
-size_t					vector_size(t_vector *vector);
+size_t					vector_size(const t_vector *vector);
 
 /**
  * @brief Get the current capacity of the vector.
  * @param vector Vector to query
  * @return Number of element the vector can hold withoud reallocation.
  */
-size_t					vector_capacity(t_vector *vector);
+size_t					vector_capacity(const t_vector *vector);
 
 /**
  * @brief Checke whether the vector is empty.
  * @param vector Vector to inspect.
  * @return 1 if empty, 0 otherwise.
  */
-int						vector_is_empty(t_vector *vector);
+int						vector_is_empty(const t_vector *vector);
 
 /**
 
@@ -85,7 +85,7 @@ int						vector_set(t_vector *vector, size_t index, void *data);
  * @param store Destination storage for the copied element.
  * @return 1 on success, 0 otherwise.
  */
-int						vector_get(t_vector *vector, size_t index, void *store);
+int						vector_get(const t_vector *vector, size_t index, void *store);
 
 /**
  * @brief Ensure the vector has at least the specific capacity.

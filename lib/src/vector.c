@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 17:45:40 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/26 19:56:44 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/26 20:41:01 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,21 @@ void	vector_destroy(t_vector *vector)
 	free(vector);
 }
 
-size_t	vector_size(t_vector *vector)
+size_t	vector_size(const t_vector *vector)
 {
 	if (!vector)
 		return (0);
 	return (vector->size);
 }
 
-size_t	vector_capacity(t_vector *vector)
+size_t	vector_capacity(const t_vector *vector)
 {
 	if (!vector)
 		return (0);
 	return (vector->capacity);
 }
 
-t_bool	vector_is_empty(t_vector *vector)
+t_bool	vector_is_empty(const t_vector *vector)
 {
 	if (!vector)
 		return (True);

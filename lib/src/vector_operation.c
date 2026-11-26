@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 18:51:56 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/25 21:38:01 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/26 19:50:48 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,12 @@ t_bool	vector_reserve(t_vector *vector, size_t reserve)
 		return (False);
 	if (reserve == 0)
 		return (False);
-	if (
-		!ds_reserve(
+	if (reserve <= vector->capacity)
+		return (True);
+	return (
+		ds_reserve(
 			&vector->container, &vector->capacity,
 			vector->data_size, reserve
 		)
-	)
-		return (False);
-	return (True);
+	);
 }

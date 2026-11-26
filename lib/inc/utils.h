@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:12:18 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/25 21:29:55 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/26 20:24:20 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef enum e_bool
  * @param capacity Current capacity in elements.
  * @param data_size Size in bytes of each element.
  * @param size Number of elements currently stored.
- * @return True on success, False on failure.
+ * @return 1 on success, 0 on failure.
  */
 t_bool	ds_grow(
 	unsigned char **container,
@@ -43,7 +43,7 @@ t_bool	ds_grow(
  * @param capacity Current capacity in elements.
  * @param data_size Size in bytes of each element.
  * @param size Number of elements currently stored.
- * @return True on success, False on failure.
+ * @return 1 on success, 0 on failure.
  */
 t_bool	ds_shrink(
 	unsigned char **container,

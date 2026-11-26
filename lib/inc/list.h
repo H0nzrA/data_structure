@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 12:31:28 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/04 19:12:11 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/26 20:24:00 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void					list_destroy(t_list *list);
  * @brief Appends a copy of an element to the list.
  * @param list Target list
  * @param data Pointer to the element to copy.
- * @return True on success, false otherwise.
+ * @return 1 on success, 0 otherwise.
  */
 t_bool					list_push_back(t_list *list, void *data);
 
@@ -46,7 +46,7 @@ t_bool					list_push_back(t_list *list, void *data);
  * @brief Removes the last element from the list.
  * @param list Target list
  * @param store Buffer for the removed element, or NULL to discard it.
- * @return True if an element was removed, false otherwise.
+ * @return 1 if an element was removed, 0 otherwise.
  */
 t_bool					list_pop_back(t_list *list, void *store);
 
@@ -54,7 +54,7 @@ t_bool					list_pop_back(t_list *list, void *store);
  * @brief Prepends a copy of an element to the list.
  * @param list Target list
  * @param data Pointer to the element to copy.
- * @return True on success, false otherwise.
+ * @return 1 on success, 0 otherwise.
  */
 t_bool					list_push_front(t_list *list, void *data);
 
@@ -62,21 +62,21 @@ t_bool					list_push_front(t_list *list, void *data);
  * @brief Removes the first element from the list.
  * @param list Target list
  * @param store Buffer for the removed element, or NULL to discard it.
- * @return True if an element was removed, false otherwise.
+ * @return 1 if an element was removed, 0 otherwise.
  */
 t_bool					list_pop_front(t_list *list, void *store);
 
 /**
  * @brief Checks whether the list is empty.
  * @param list Pointer to the list to check.
- * @return True if the list is empty or NULL, False otherwise.
+ * @return 1 if the list is empty or NULL, 0 otherwise.
  */
 t_bool					list_is_empty(const t_list *list);
 
 /**
  * @brief Checks whether the list contains a cycle.
  * @param list Pointer to the list to check.
- * @return True if a cycle exists, False otherwise.
+ * @return 1 if a cycle exists, 0 otherwise.
  */
 t_bool					list_have_loop(const t_list *list);
 

@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 19:06:46 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/01 13:09:05 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/26 20:24:04 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void					queue_destroy(t_queue *queue);
  * @brief Adds an element to the back of queue.
  * @param queue Queue to modify.
  * @param data Element to copy into the queue.
- * @return True on success, False on failure.
+ * @return 1 on success, 0 on failure.
  */
 t_bool					queue_enqueue(t_queue *queue, const void *value);
 
@@ -46,7 +46,7 @@ t_bool					queue_enqueue(t_queue *queue, const void *value);
  * @brief Removes and retrieves the first element of the queue.
  * @param queue Queue to modify.
  * @param store Buffer to store the removed element, or NULL to discard it.
- * @return True on success, False if the queue is empty of an error occured.
+ * @return 1 on success, 0 if the queue is empty of an error occured.
  */
 t_bool					queue_dequeue(t_queue *queue, void *store);
 
@@ -54,14 +54,14 @@ t_bool					queue_dequeue(t_queue *queue, void *store);
  * @brief Retrieves the front element without removing it.
  * @param queue Queue to inspect.
  * @param store Buffer to store the retrieved element.
- * @return True on success, False if the queue is empty of an error occured.
+ * @return 1 on success, 0 if the queue is empty of an error occured.
  */
 t_bool					queue_peek(const t_queue *queue, void *store);
 
 /**
  * @brief Check whether the queue contain no elements.
  * @param queue Queue to inspect.
- * @return True if empty, False otherwise.
+ * @return 1 if empty, 0 otherwise.
  */
 t_bool					queue_is_empty(const t_queue *queue);
 

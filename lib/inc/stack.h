@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 20:15:19 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/01 17:27:30 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/26 20:24:12 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void					stack_destroy(t_stack *stack);
  * @brief Pushes a copy of an element onto the stack.
  * @param stack Target stack
  * @param data Pointer to the element to copy.
- * @return True on success, false otherwise.
+ * @return 1 on success, 0 otherwise.
  */
 t_bool					stack_push(t_stack *stack, const void *data);
 
@@ -46,7 +46,7 @@ t_bool					stack_push(t_stack *stack, const void *data);
  * @brief Removes the top element from the stack.
  * @param stack Target stack
  * @param store Buffer for the removed element, or NULL to discard it.
- * @return True if an element was removed, false otherwise.
+ * @return 1 if an element was removed, 0 otherwise.
  */
 t_bool					stack_pop(t_stack *stack, void *store);
 
@@ -54,14 +54,14 @@ t_bool					stack_pop(t_stack *stack, void *store);
  * @brief Copies the top element without removing it.
  * @param stack Stack to inspect
  * @param store Buffer to receive the element.
- * @return True if an element exists, false otherwise.
+ * @return 1 if an element exists, 0 otherwise.
  */
 t_bool					stack_top(const t_stack *stack, void *store);
 
 /**
  * @brief Checks whether the stack is empty.
  * @param stack Stack to inspect.
- * @return True if empty, false otherwise.
+ * @return 1 if empty, 0 otherwise.
  */
 t_bool					stack_is_empty(const t_stack *stack);
 

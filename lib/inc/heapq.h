@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 15:24:11 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/12 22:33:17 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/26 20:23:55 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void					heapq_destroy(t_heapq *heapq);
  * @brief Inserts a copy of an element into the priority queue.
  * @param heapq Target priority queue.
  * @param data Pointer to the element to copy.
- * @return True on success, false otherwise.
+ * @return 1 on success, 0 otherwise.
  */
 t_bool					heapq_push(t_heapq *heapq, const void *data);
 
@@ -69,7 +69,7 @@ t_bool					heapq_push(t_heapq *heapq, const void *data);
  * @brief Removes the highest-priority element from the queue.
  * @param heapq Target priority queue.
  * @param store Buffer to receive the removed element, or NULL to discard it.
- * @return True if an element was removed, false otherwise.
+ * @return 1 if an element was removed, 0 otherwise.
  */
 t_bool					heapq_pop(t_heapq *heapq, void *store);
 
@@ -77,7 +77,7 @@ t_bool					heapq_pop(t_heapq *heapq, void *store);
  * @brief Copies the highest-priority element without removing it.
  * @param heapq Target priority queue.
  * @param store Buffer to receive the element.
- * @return True if an element exists, false otherwise.
+ * @return 1 if an element exists, 0 otherwise.
  */
 t_bool					heapq_peek(const t_heapq *heapq, void *store);
 
@@ -91,7 +91,7 @@ size_t					heapq_size(const t_heapq *heapq);
 /**
  * @brief Check whether the heap is empty.
  * @param heapq The param to inspect.
- * @return True if empty, False otherwise.
+ * @return 1 if empty, 0 otherwise.
  */
 t_bool					heapq_is_empty(const t_heapq *heapq);
 
@@ -99,7 +99,7 @@ t_bool					heapq_is_empty(const t_heapq *heapq);
  * @brief Change the heap type (min-heap or max_heap).
  * @param heapq The heap to modify.
  * @param type The new heap type.
- * @return True on success, False on failure.
+ * @return 1 on success, 0 on failure.
  */
 t_bool					heapq_set_type(t_heapq *heapq, t_heapq_type type);
 
@@ -107,7 +107,7 @@ t_bool					heapq_set_type(t_heapq *heapq, t_heapq_type type);
  * @brief Changes the comparaison function used by the heap.
  * @param heapq The heap to modify.
  * @param compare The new heap comparaison function.
- * @return True on success, False on failuer.
+ * @return 1 on success, 0 on failuer.
  */
 t_bool					heapq_set_compare(t_heapq *heapq, t_compare compare);
 

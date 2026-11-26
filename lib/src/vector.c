@@ -6,7 +6,7 @@
 /*   By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 17:45:40 by trakotoz          #+#    #+#             */
-/*   Updated: 2026/11/25 21:42:07 by trakotoz         ###   ########.fr       */
+/*   Updated: 2026/11/26 19:56:44 by trakotoz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ size_t	vector_capacity(t_vector *vector)
 t_bool	vector_is_empty(t_vector *vector)
 {
 	if (!vector)
-		return (False);
+		return (True);
 	return (vector->size == 0);
 }
 
@@ -66,9 +66,5 @@ void	vector_clear(t_vector *vector)
 {
 	if (!vector)
 		return ;
-	if (vector->container)
-		free(vector->container);
-	vector->container = NULL;
 	vector->size = 0;
-	vector->capacity = 0;
 }

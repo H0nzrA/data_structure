@@ -6,7 +6,7 @@
 #    By: trakotoz <trakotoz@student.42antananarivo  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/10/16 15:53:42 by trakotoz          #+#    #+#              #
-#    Updated: 2026/11/15 18:52:52 by trakotoz         ###   ########.fr        #
+#    Updated: 2026/11/26 20:29:33 by trakotoz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ AR		:= ar
 CC		:= cc
 
 ARFLAGS		:= rcs
-CFLAGS		:= -Wall -Wextra -Werror -MMD -MP -g # TODO: Remove -g
+CFLAGS		:= -Wall -Wextra -Werror -MMD -MP -g
 PICFLAGS	:= -fPIC
 SFLAGS		:= -shared
 
